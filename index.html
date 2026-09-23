@@ -325,14 +325,41 @@
     background: var(--surface); border: 1.5px solid var(--text);
     display:grid; place-items:center; font-size: 28px; position: relative; z-index: 1;
   }
+  /* the path between stops: dashes march toward the beach while the section is on screen */
   .route::before{
-    content:""; position:absolute; left: 16%; right: 16%; top: 32px; border-top: 2px dashed var(--muted); opacity: .6;
+    content:""; position:absolute; left: 16%; right: 16%; top: 31px; height: 2px;
+    background: repeating-linear-gradient(90deg, var(--accent) 0 7px, transparent 7px 14px);
+    opacity: .75;
   }
+  .route.live::before{ animation: march-x 1s linear infinite; }
+  @keyframes march-x{ to{ background-position: 14px 0; } }
+  @keyframes march-y{ to{ background-position: 0 14px; } }
+  .stop .dot::after{
+    content:""; position:absolute; inset: -2px; border-radius: 50%;
+    border: 2px solid var(--accent); opacity: 0; pointer-events: none;
+  }
+  /* each stop lights up in turn: donut → ade → beach */
+  .route.live .dot{ animation: stepglow 4.5s ease-in-out infinite; }
+  .route.live .stop:nth-child(2) .dot{ animation-delay: 1.5s; }
+  .route.live .stop:nth-child(3) .dot{ animation-delay: 3s; }
+  @keyframes stepglow{
+    0%, 100%{ transform: scale(1); border-color: var(--text); box-shadow: 0 0 0 0 transparent; }
+    8%{ transform: scale(1.1); border-color: var(--accent); box-shadow: 0 0 0 7px var(--accent-soft); }
+    22%{ transform: scale(1); border-color: var(--accent); box-shadow: 0 0 0 0 transparent; }
+    34%{ border-color: var(--text); }
+  }
+  /* the beach is the destination: a soft ripple keeps going */
+  .route.live .stop:last-child .dot::after{ animation: ripple 2.4s ease-out infinite; }
+  @keyframes ripple{ 0%{ opacity: .7; transform: scale(1); } 100%{ opacity: 0; transform: scale(1.55); } }
   .stop h3{ font-size: 15.5px; font-weight: 700; }
   .stop p{ font-size: 13px; line-height: 1.45; color: var(--muted); }
   @media (max-width: 480px){
     .route{ grid-template-columns: 1fr; gap: 16px; }
-    .route::before{ left: 31px; right: auto; top: 32px; bottom: 32px; border-top: 0; border-left: 2px dashed var(--muted); }
+    .route::before{
+      left: 31px; right: auto; top: 32px; bottom: 32px; width: 2px; height: auto;
+      background: repeating-linear-gradient(180deg, var(--accent) 0 7px, transparent 7px 14px);
+    }
+    .route.live::before{ animation-name: march-y; }
     .stop{ grid-template-columns: 64px 1fr; text-align:left; justify-items:start; column-gap: 14px; align-items:center; }
     .stop .dot{ grid-row: span 2; }
   }
@@ -411,6 +438,7 @@
 
   @media (prefers-reduced-motion: reduce){
     .ticker-track, .arch-wrap::before, .arch{ animation: none; }
+    .route.live::before, .route.live .dot, .route.live .stop:last-child .dot::after{ animation: none; }
     .btn, .chip{ transition: none; }
   }
 </style>
@@ -566,7 +594,7 @@
       <div class="copy">
         <p class="script">since 2019</p>
         <h2 class="display">The bear by the beach</h2>
-        <p class="lede">We opened by Gwangalli in 2019, one of Busan's first handmade-donut shops. The routine hasn't changed since: the lights come on before sunrise, the dough is mixed by hand, and whatever we make today is sold today.</p>
+        <p class="lede">Black Bear Donut began in 2019 as a first-generation handmade-donut brand. Here by Gwangalli, the routine is the same as on day one: the lights come on before sunrise, the dough is mixed by hand, and whatever we make today is sold today.</p>
       </div>
     </div>
   </section>
@@ -916,6 +944,16 @@
     });
   });
   update();
+
+  /* route: animate only while on screen */
+  var route = document.querySelector('.route');
+  if(route){
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ route.classList.toggle('live', e.isIntersecting); });
+      }, { threshold: 0.25 }).observe(route);
+    } else { route.classList.add('live'); }
+  }
 
   /* taxi card */
   var dlg = document.getElementById('taxiCard');
