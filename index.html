@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Black Bear Donut Busan | Made This Morning, Sold Today Only</title>
+<meta name="description" content="Handmade donuts steps from Gwangalli Beach, Busan. Made this morning, sold today only. Crème brûlée torched to order, a seasonal lineup and nine-piece mini boxes.">
+<meta property="og:title" content="Black Bear Donut Busan">
+<meta property="og:description" content="Made this morning. Sold today only. Handmade donuts steps from Gwangalli Beach.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="bear-mark.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@400;500;600;700;800&family=Pinyon+Script&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BakeryOrCafeOrCoffeeShop",
+  "name": "Black Bear Donut Busan",
+  "servesCuisine": "Donuts, Coffee, Ade",
+  "telephone": "+82-70-7798-1190",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "12, Gwanganhaebyeon-ro 255beon-gil",
+    "addressLocality": "Suyeong-gu, Busan",
+    "postalCode": "48285",
+    "addressCountry": "KR"
+  },
+  "description": "Handmade donuts made fresh every morning and sold the same day only, steps from Gwangalli Beach.",
+  "hasMap": "https://maps.app.goo.gl/g9EJB3ZToqhamKCu8"
+}
+</script>
+<style>
+  :root{
+    --bg:#FAF4E8;
+    --surface:#FFFBF3;
+    --surface-2:#F2E6D2;
+    --text:#3B1E10;
+    --muted:#7B5B45;
+    --accent:#B5531A;
+    --accent-soft:#F6DDC4;
+    --on-accent:#FFF8EE;
+    --ink:#161211;
+    --on-ink:#FAF4E8;
+    --on-ink-muted:#B8AC9C;
+    --line:#E7D8BE;
+    --arch:#FEF7ED;
+    --arch-hero:#0E0B0A;
+    --glow:rgba(229,138,76,.45);
+    --shadow:0 1px 2px rgba(59,30,16,.06), 0 14px 32px -18px rgba(59,30,16,.35);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#16100C;
+      --surface:#211812;
+      --surface-2:#2B2018;
+      --text:#F4E7D6;
+      --muted:#C3A88C;
+      --accent:#E58A4C;
+      --accent-soft:#3A271A;
+      --on-accent:#1A0F08;
+      --ink:#0A0807;
+      --on-ink:#FAF4E8;
+      --on-ink-muted:#A89C8E;
+      --line:#3A2C21;
+      --glow:rgba(229,138,76,.35);
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 14px 32px -18px rgba(0,0,0,.8);
+      color-scheme: dark;
+    }
+    :root:not([data-theme="light"]) .logo-ink{ filter: invert(.92); }
+  }
+  :root[data-theme="dark"]{
+    --bg:#16100C;
+    --surface:#211812;
+    --surface-2:#2B2018;
+    --text:#F4E7D6;
+    --muted:#C3A88C;
+    --accent:#E58A4C;
+    --accent-soft:#3A271A;
+    --on-accent:#1A0F08;
+    --ink:#0A0807;
+    --on-ink:#FAF4E8;
+    --on-ink-muted:#A89C8E;
+    --line:#3A2C21;
+    --glow:rgba(229,138,76,.35);
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 14px 32px -18px rgba(0,0,0,.8);
+    color-scheme: dark;
+  }
+  :root[data-theme="dark"] .logo-ink{ filter: invert(.92); }
+
+  *{ box-sizing:border-box; }
+  html, body{ margin:0; padding:0; }
+  html{ overflow-x: hidden; }
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Outfit", -apple-system, "Segoe UI", "Hiragino Sans", "PingFang SC", "Noto Sans Thai", sans-serif;
+    font-size: 16px;
+    padding-inline: 20px;
+    padding-block: 0 calc(96px + env(safe-area-inset-bottom, 0px));
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+  h1,h2,h3,p{ margin:0; }
+  a{ color: inherit; }
+  img{ max-width:100%; }
+  .wrap{ max-width: 720px; margin-inline:auto; }
+  button{ font: inherit; }
+  :focus-visible{ outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+  /* type system — borrowed from our own posters: script line + tall condensed caps */
+  .script{
+    font-family: "Pinyon Script", "Snell Roundhand", cursive;
+    font-size: 30px;
+    line-height: 1;
+    color: var(--accent);
+  }
+  .display{
+    font-family: "Anton", "Impact", "Hiragino Sans", "PingFang SC", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .005em;
+    line-height: .92;
+    text-wrap: balance;
+  }
+  h2.display{ font-size: clamp(34px, 9vw, 52px); }
+  .lede{ color: var(--muted); font-size: 16px; line-height: 1.6; max-width: 52ch; }
+  html:is(:lang(ja), :lang(zh), :lang(th)) .script{
+    font-family: "Outfit", "Hiragino Sans", "PingFang SC", sans-serif;
+    font-size: 15px; font-weight: 600; letter-spacing: .06em;
+  }
+  html:is(:lang(ja), :lang(zh), :lang(th)) .display{ font-weight: 800; line-height: 1.08; letter-spacing: 0; }
+
+  /* buttons */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    font-weight: 600; font-size: 15px;
+    padding: 13px 20px;
+    border-radius: 999px;
+    border: 1.5px solid transparent;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+  }
+  .btn:active{ transform: scale(.97); }
+  .btn-primary{ background: var(--accent); color: var(--on-accent); box-shadow: 0 10px 22px -12px var(--glow); }
+  .btn-primary:hover{ filter: brightness(1.06); }
+  .btn-line{ background: transparent; color: var(--text); border-color: var(--text); }
+  .btn-line:hover{ background: var(--surface-2); }
+
+  /* topbar */
+  .topbar{
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30;
+    display:flex; align-items:center; justify-content:space-between; gap: 12px;
+    padding-block: 12px;
+    background: color-mix(in srgb, var(--bg) 86%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .brand{ display:flex; align-items:center; gap:9px; text-decoration:none;
+    font-family:"Anton", "Impact", sans-serif; font-size: 19px; letter-spacing:.02em; text-transform: uppercase; }
+  .brand img{ height: 30px; width:auto; display:block; }
+  .top-actions{ display:flex; gap:8px; align-items:center; }
+  .lang-select{
+    font: 600 13px "Outfit", sans-serif;
+    color: var(--text); background: var(--surface);
+    border: 1px solid var(--line); border-radius: 999px;
+    padding: 8px 10px;
+  }
+  .top-dir{ padding: 9px 15px; font-size: 13.5px; }
+  @media (max-width: 560px){ .top-dir{ display:none; } }
+
+  /* hero */
+  .hero{ padding-block: 18px 30px; display:grid; gap: 14px; text-align:center; justify-items:center; }
+  .hero h1{ font-size: clamp(58px, 18vw, 104px); color: var(--text); }
+  .hero .today{
+    font-family: "Pinyon Script", "Snell Roundhand", cursive;
+    font-size: clamp(34px, 9vw, 46px); line-height: 1.05; color: var(--accent);
+    margin-top: -4px;
+  }
+  html:is(:lang(ja), :lang(zh), :lang(th)) .hero .today{
+    font-family:"Outfit", "Hiragino Sans", "PingFang SC", sans-serif; font-weight: 700; font-size: 24px;
+  }
+  .arch-wrap{ position: relative; width: min(100%, 440px); margin-top: 6px; }
+  .arch-wrap::before{
+    content:""; position:absolute; inset: 8% -6% -4% -6%;
+    background: radial-gradient(closest-side, var(--glow), transparent 72%);
+    filter: blur(8px);
+    animation: torch 4.8s ease-in-out infinite;
+    z-index: 0;
+  }
+  .arch{
+    position: relative; z-index: 1;
+    background: var(--arch-hero);
+    border-radius: 999px 999px 26px 26px;
+    padding: 22% 0 0;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    animation: rise .9s cubic-bezier(.2,.8,.2,1) both;
+  }
+  .arch img{
+    display:block; width:100%; height:auto;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 16%), linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(to bottom, transparent 0, #000 16%), linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+    mask-composite: intersect;
+  }
+  .arch-badge{
+    position:absolute; z-index:2; right: 2px; top: 14%;
+    width: 96px; height: 96px; border-radius: 50%;
+    background: #FFFFFF; color: #161211;
+    border: 1px solid rgba(22,18,17,.12);
+    display:grid; place-items:center; text-align:center;
+    font: 800 17px/1.08 "Outfit", -apple-system, "Segoe UI", "Helvetica Neue", Roboto, Arial, sans-serif;
+    font-synthesis: weight;
+    letter-spacing: .06em; text-transform: uppercase;
+    transform: rotate(10deg);
+    box-shadow: var(--shadow);
+  }
+  .arch-badge span{ display:block; }
+  .hero .lede{ margin-top: 6px; }
+  .hero-cta{ display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-top: 4px; }
+  @keyframes rise{ from{ transform: translateY(14px) scale(.97); } to{ transform: none; } }
+  @keyframes torch{ 0%,100%{ opacity:.55; transform: scale(.96); } 50%{ opacity:1; transform: scale(1.03); } }
+
+  /* ticker */
+  .ticker{
+    margin-inline: calc(50% - 50vw);
+    background: var(--ink); color: var(--on-ink);
+    overflow: hidden; white-space: nowrap;
+    padding-block: 14px;
+    transform: rotate(-1.4deg);
+    margin-block: 8px 34px;
+  }
+  .ticker-track{ display:inline-flex; gap: 0; animation: slide 26s linear infinite; }
+  .ticker span{ font: 400 22px/1 "Anton", "Impact", sans-serif; text-transform: uppercase; letter-spacing: .04em; padding-inline: 18px; }
+  .ticker i{ font-style: normal; color: var(--accent); }
+  @keyframes slide{ to{ transform: translateX(-50%); } }
+
+  section.block{ padding-block: 34px; display:grid; gap: 18px; }
+  .head{ display:grid; gap: 8px; }
+
+  /* best seller */
+  .best{
+    display:grid; grid-template-columns: .9fr 1.1fr; gap: 24px; align-items:center;
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 28px; padding: 22px;
+  }
+  .best-photo{ position: relative; }
+  .best-photo img{ width:100%; height:auto; display:block; border-radius: 18px; transform: rotate(2deg); box-shadow: var(--shadow); }
+  .no1{
+    position:absolute; left: -8px; top: -10px;
+    width: 72px; height: 72px; border-radius: 50%;
+    background: var(--ink); color: var(--on-ink);
+    display:grid; place-items:center;
+    font: 400 22px/1 "Anton", "Impact", sans-serif; letter-spacing: .02em;
+    transform: rotate(-10deg); box-shadow: var(--shadow);
+  }
+  .best .copy{ display:grid; gap: 10px; }
+  .best h2.display{ font-size: clamp(38px, 10vw, 56px); }
+  .tags{ list-style:none; margin: 4px 0 0; padding: 0; display:flex; flex-wrap:wrap; gap: 8px; }
+  .tags li{ background: var(--accent-soft); color: var(--text); border-radius: 999px; padding: 7px 12px; font-size: 13.5px; font-weight: 600; }
+  @media (max-width: 520px){
+    .best{ grid-template-columns: 1fr; }
+    .best-photo{ max-width: 260px; margin-inline: auto; }
+  }
+
+  /* lineup */
+  .chips{ display:flex; gap: 8px; flex-wrap: wrap; }
+  .chip{
+    border: 1.5px solid var(--line); background: var(--surface); color: var(--text);
+    border-radius: 999px; padding: 8px 14px; font-weight: 600; font-size: 14px; cursor: pointer;
+  }
+  .chip[aria-pressed="true"]{ background: var(--text); color: var(--bg); border-color: var(--text); }
+  .track{
+    display:flex; gap: 14px;
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    scrollbar-width: none; overscroll-behavior-x: contain;
+    margin-inline: -20px; padding: 6px 20px 10px;
+    scroll-padding-inline: 20px;
+  }
+  .track::-webkit-scrollbar{ display:none; }
+  .slide{ flex: 0 0 min(72%, 300px); scroll-snap-align: center; margin: 0; }
+  .slide img{
+    display:block; width:100%; height:auto; aspect-ratio: 760/1074;
+    border-radius: 18px; background: var(--arch); box-shadow: var(--shadow);
+  }
+  .car-foot{ display:flex; align-items:center; justify-content:space-between; gap: 12px; }
+  .count{ font: 400 20px/1 "Anton", "Impact", sans-serif; letter-spacing: .04em; font-variant-numeric: tabular-nums; }
+  .count span{ color: var(--muted); }
+  .arrows{ display:flex; gap: 8px; }
+  .arrow{
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 1.5px solid var(--text); background: transparent; color: var(--text);
+    font-size: 18px; cursor: pointer;
+  }
+  .arrow:hover{ background: var(--surface-2); }
+
+  /* box */
+  .box{
+    display:grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items:center;
+    background: var(--accent-soft); border-radius: 28px; padding: 22px;
+  }
+  .box img{ width:100%; height:auto; border-radius: 18px; display:block; transform: rotate(-2.5deg); box-shadow: var(--shadow); }
+  .box .copy{ display:grid; gap: 10px; }
+  .box h2.display{ font-size: clamp(30px, 7vw, 42px); }
+  @media (max-width: 520px){ .box{ grid-template-columns: 1fr; } .box img{ max-width: 260px; margin-inline:auto; } }
+
+  /* only here */
+  .only{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .only-card{
+    background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 18px;
+    display:grid; gap: 6px; align-content:start;
+  }
+  .only-card .emo{ font-size: 30px; line-height: 1; }
+  .only-card h3{ font: 400 22px/1.05 "Anton", "Impact", sans-serif; text-transform: uppercase; letter-spacing: .01em; }
+  .only-card p{ color: var(--muted); font-size: 14px; line-height: 1.5; }
+  @media (max-width: 400px){ .only{ grid-template-columns: 1fr; } }
+
+  /* afternoon route */
+  .route{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 10px; position: relative; }
+  .stop{ display:grid; gap: 6px; text-align:center; justify-items:center; }
+  .stop .dot{
+    width: 64px; height: 64px; border-radius: 50%;
+    background: var(--surface); border: 1.5px solid var(--text);
+    display:grid; place-items:center; font-size: 28px; position: relative; z-index: 1;
+  }
+  .route::before{
+    content:""; position:absolute; left: 16%; right: 16%; top: 32px; border-top: 2px dashed var(--muted); opacity: .6;
+  }
+  .stop h3{ font-size: 15.5px; font-weight: 700; }
+  .stop p{ font-size: 13px; line-height: 1.45; color: var(--muted); }
+  @media (max-width: 480px){
+    .route{ grid-template-columns: 1fr; gap: 16px; }
+    .route::before{ left: 31px; right: auto; top: 32px; bottom: 32px; border-top: 0; border-left: 2px dashed var(--muted); }
+    .stop{ grid-template-columns: 64px 1fr; text-align:left; justify-items:start; column-gap: 14px; align-items:center; }
+    .stop .dot{ grid-row: span 2; }
+  }
+
+  /* promise list */
+  .promise{ display:grid; gap: 0; border-top: 1px solid var(--line); }
+  .promise li{
+    list-style: none; display:grid; grid-template-columns: 40px 1fr; gap: 12px;
+    padding-block: 16px; border-bottom: 1px solid var(--line);
+  }
+  .promise{ padding: 0; margin: 0; }
+  .promise .emo{ font-size: 24px; line-height: 1.2; }
+  .promise h3{ font-size: 16.5px; font-weight: 700; margin-bottom: 3px; }
+  .promise p{ font-size: 14.5px; line-height: 1.55; color: var(--muted); }
+
+  /* story */
+  .story{
+    display:grid; grid-template-columns: 130px 1fr; gap: 22px; align-items:center;
+  }
+  .story img{ width: 100%; height:auto; display:block; }
+  .story .copy{ display:grid; gap: 10px; }
+  @media (max-width: 480px){ .story{ grid-template-columns: 1fr; justify-items:center; text-align:center; } .story img{ width: 120px; } }
+
+  /* visit — black & white */
+  .visit{
+    background: var(--ink); color: var(--on-ink);
+    border-radius: 28px; padding: 28px 22px;
+    display:grid; gap: 16px;
+    border: 1px solid rgba(255,255,255,.08);
+  }
+  .visit .script{ color: #F2A65A; }
+  .visit h2.display{ color: var(--on-ink); }
+  .visit-top{ display:flex; justify-content:space-between; align-items:flex-end; gap: 12px; }
+  .visit-top img{ height: 70px; width:auto; filter: invert(1); flex:none; }
+  .addr{ font-size: 15px; line-height: 1.55; }
+  .addr .kr{ color: var(--on-ink-muted); font-size: 14px; }
+  .visit .row{ display:flex; flex-wrap:wrap; gap: 10px; }
+  .visit .btn-primary{ background: #FAF4E8; color: #161211; box-shadow:none; }
+  .visit .btn-line{ color: #FAF4E8; border-color: rgba(250,244,232,.5); }
+  .visit .btn-line:hover{ background: rgba(255,255,255,.08); }
+  .visit .note{ color: var(--on-ink-muted); font-size: 13.5px; line-height: 1.5; }
+
+  footer{ padding-block: 34px 10px; display:grid; gap: 10px; justify-items:center; text-align:center; }
+  footer img{ width: 76px; height:auto; }
+  footer p{ color: var(--muted); font-size: 13px; }
+
+  /* sticky action bar */
+  .actionbar{
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid var(--line);
+  }
+  .actionbar-inner{ max-width: 720px; margin-inline:auto; display:grid; grid-template-columns: 1.4fr 1fr; gap: 10px; }
+  .actionbar .btn{ width: 100%; padding-block: 14px; }
+
+  /* taxi card */
+  dialog.taxi{
+    border: none; border-radius: 26px; padding: 0;
+    width: min(92vw, 440px);
+    background: #FFFBF3; color: #161211;
+    box-shadow: 0 30px 80px -20px rgba(0,0,0,.5);
+  }
+  dialog.taxi::backdrop{ background: rgba(22,18,17,.6); backdrop-filter: blur(3px); }
+  .taxi-inner{ padding: 26px 22px 20px; display:grid; gap: 14px; text-align:center; }
+  .taxi-inner .label{ font-weight: 600; font-size: 14px; color: #7B5B45; }
+  .taxi-kr{ display:grid; gap: 8px; padding: 20px 14px; border: 2px dashed #B5531A; border-radius: 18px; user-select: all; -webkit-user-select: all; }
+  .taxi-kr .name{ font: 800 34px/1.1 "Hiragino Sans", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif; }
+  .taxi-kr .addr-kr{ font: 700 20px/1.4 "Hiragino Sans", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif; }
+  .taxi-kr .please{ font: 600 17px/1.4 "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif; color: #B5531A; }
+  .taxi-btns{ display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .taxi .btn-primary{ background:#B5531A; color:#FFF8EE; }
+  .taxi .btn-line{ color:#161211; border-color:#161211; }
+
+  @media (prefers-reduced-motion: reduce){
+    .ticker-track, .arch-wrap::before, .arch{ animation: none; }
+    .btn, .chip{ transition: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="topbar">
+    <a class="brand" href="#top">
+      <img class="logo-ink" src="bear-mark.png" alt="" width="125" height="280">
+      Black Bear Donut
+    </a>
+    <div class="top-actions">
+      <select id="langSelect" class="lang-select" aria-label="Language">
+        <option value="en">EN</option>
+        <option value="ja">日本語</option>
+        <option value="zh">中文</option>
+        <option value="vi">Tiếng Việt</option>
+        <option value="id">Indonesia</option>
+        <option value="th">ภาษาไทย</option>
+      </select>
+      <a class="btn btn-primary top-dir" href="https://maps.app.goo.gl/g9EJB3ZToqhamKCu8" target="_blank" rel="noopener" data-i18n="nav.getDirections">Get Directions</a>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <p class="script" data-i18n="hero.script">Good morning from Gwangalli</p>
+    <h1 class="display" data-i18n="hero.h1">Made this<br>morning.</h1>
+    <p class="today" data-i18n="hero.today">Sold today only.</p>
+    <div class="arch-wrap">
+      <div class="arch">
+        <img src="hero-donut-cut2.jpg" alt="Our handmade donuts cut in half to show the fillings inside — berry, apple crumble, matcha and custard" width="1000" height="896">
+      </div>
+      <div class="arch-badge" aria-hidden="true"><div><span>SINCE</span><span>2019</span></div></div>
+    </div>
+    <p class="lede" data-i18n="hero.sub">Handmade donuts steps from Gwangalli Beach. Not too sweet, generously filled, and never kept for tomorrow.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="https://maps.app.goo.gl/g9EJB3ZToqhamKCu8" target="_blank" rel="noopener"><span aria-hidden="true">📍</span> <span data-i18n="nav.getDirections">Get Directions</span></a>
+      <button class="btn btn-line js-taxi" type="button"><span aria-hidden="true">🚕</span> <span data-i18n="nav.taxi">Taxi card</span></button>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Made this morning <i>✦</i></span><span>Sold today only <i>✦</i></span><span>Not too sweet <i>✦</i></span><span>Handmade in Busan <i>✦</i></span><span>Gwangalli Beach <i>✦</i></span>
+      <span>Made this morning <i>✦</i></span><span>Sold today only <i>✦</i></span><span>Not too sweet <i>✦</i></span><span>Handmade in Busan <i>✦</i></span><span>Gwangalli Beach <i>✦</i></span>
+    </div>
+  </div>
+
+  <section class="block">
+    <div class="best">
+      <div class="best-photo">
+        <img src="creme-brulee.jpg" alt="Crème Brûlée donut poster — a delicate crackle, a soft heart" width="1000" height="1413" loading="lazy">
+        <span class="no1" aria-hidden="true">No.1</span>
+      </div>
+      <div class="copy">
+        <p class="script" data-i18n="best.script">our all-time best seller</p>
+        <h2 class="display">Crème Brûlée</h2>
+        <p class="lede" data-i18n="best.p">Our signature: a crackly caramelized sugar top over soft, silky cream — torched to order, so it's still warm when it reaches you. Best eaten within a minute.</p>
+        <ul class="tags">
+          <li><span aria-hidden="true">🔥</span> <span data-i18n="best.t1">Torched to order</span></li>
+          <li><span aria-hidden="true">✨</span> <span data-i18n="best.t2">Crackly caramel top</span></li>
+          <li><span aria-hidden="true">🍮</span> <span data-i18n="best.t3">Silky cream</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="head">
+      <p class="script" data-i18n="lineup.script">pick your favorite</p>
+      <h2 class="display" data-i18n="lineup.title">Our Donut Lineup</h2>
+      <p class="lede" data-i18n="lineup.sub">Swipe to see more. Flavors rotate with the seasons — ask us what's on the shelf today.</p>
+    </div>
+    <div class="chips" role="group" aria-label="Filter by flavor">
+      <button class="chip" type="button" data-filter="all" aria-pressed="true" data-i18n="chip.all">All</button>
+      <button class="chip" type="button" data-filter="fruity" aria-pressed="false"><span aria-hidden="true">🍋</span> <span data-i18n="chip.fruity">Fruity</span></button>
+      <button class="chip" type="button" data-filter="nutty" aria-pressed="false"><span aria-hidden="true">🥜</span> <span data-i18n="chip.nutty">Nutty</span></button>
+      <button class="chip" type="button" data-filter="choco" aria-pressed="false"><span aria-hidden="true">🍫</span> <span data-i18n="chip.choco">Chocolate</span></button>
+      <button class="chip" type="button" data-filter="tea" aria-pressed="false"><span aria-hidden="true">🍵</span> <span data-i18n="chip.tea">Tea &amp; Matcha</span></button>
+    </div>
+    <div class="track" id="lineupTrack" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Donut lineup">
+      <figure class="slide" data-tags="fruity"><img src="lineup-lemon-custard.jpg" alt="Lemon Custard — bright lemon, silky custard" width="760" height="1074"></figure>
+      <figure class="slide" data-tags="nutty"><img src="lineup-pistachio.jpg" alt="Pistachio — delicate glaze, nutty finish" width="760" height="1074"></figure>
+      <figure class="slide" data-tags="choco"><img src="lineup-chocolat.jpg" alt="Chocolat — smooth chocolate, pure pleasure" width="760" height="1074" loading="lazy"></figure>
+      <figure class="slide" data-tags="fruity"><img src="lineup-triple-berry.jpg" alt="Triple Berry — bright berries, luscious glaze" width="760" height="1074" loading="lazy"></figure>
+      <figure class="slide" data-tags="tea"><img src="lineup-earl-grey-vanilla.jpg" alt="Earl Grey Vanilla — fragrant tea, mellow vanilla" width="760" height="1074" loading="lazy"></figure>
+      <figure class="slide" data-tags="nutty"><img src="lineup-peanut-crunky.jpg" alt="Peanut Crunky — nutty richness, delicate crunch" width="760" height="1074" loading="lazy"></figure>
+      <figure class="slide" data-tags="tea choco"><img src="lineup-oreo-matcha.jpg" alt="Oreo Matcha — earthy matcha, cookie crunch" width="760" height="1074" loading="lazy"></figure>
+      <figure class="slide" data-tags="fruity"><img src="lineup-apple-cinnamon.jpg" alt="Apple Cinnamon — sweet apple, a whisper of cinnamon" width="760" height="1074" loading="lazy"></figure>
+    </div>
+    <div class="car-foot">
+      <div class="count" aria-live="polite"><b id="curN">1</b> <span>/ <span id="totN">8</span></span></div>
+      <div class="arrows">
+        <button class="arrow" id="lineupPrev" type="button" aria-label="Previous donut">←</button>
+        <button class="arrow" id="lineupNext" type="button" aria-label="Next donut">→</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="box">
+      <img src="mini-donut-box.jpg" alt="Nine-piece mini donut box" loading="lazy" width="1000" height="1413">
+      <div class="copy">
+        <p class="script" data-i18n="box.script">can't choose?</p>
+        <h2 class="display" data-i18n="box.h">Try nine in one box</h2>
+        <p class="lede" data-i18n="box.p">Nine mini donuts, nine flavors — made for sharing with your travel crew, or for a hotel-room tasting night.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="head">
+      <p class="script" data-i18n="only.script">only here</p>
+      <h2 class="display" data-i18n="only.h">Only in Busan</h2>
+      <p class="lede" data-i18n="only.p">Two flavors you won't find anywhere else.</p>
+    </div>
+    <div class="only">
+      <div class="only-card"><span class="emo" aria-hidden="true">🫐</span><h3>Blueberry</h3><p>A bright, fruit-forward glaze over our everyday dough.</p></div>
+      <div class="only-card"><span class="emo" aria-hidden="true">🍠</span><h3>Sweet Potato</h3><p>Roasted sweet potato filling, mellow and lightly sweet.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="head">
+      <p class="script" data-i18n="route.script">a perfect Gwangalli afternoon</p>
+      <h2 class="display" data-i18n="route.h">Donut, ade, then the beach</h2>
+    </div>
+    <div class="route">
+      <div class="stop"><span class="dot" aria-hidden="true">🍩</span><h3 data-i18n="route.a1h">Pick your donuts</h3><p data-i18n="route.a1p">Two for you, one to share.</p></div>
+      <div class="stop"><span class="dot" aria-hidden="true">🥤</span><h3 data-i18n="route.a2h">Grab an ade</h3><p data-i18n="route.a2p">House-made fruit syrup, one whole can of soda per cup.</p></div>
+      <div class="stop"><span class="dot" aria-hidden="true">🌊</span><h3 data-i18n="route.a3h">Walk to the beach</h3><p data-i18n="route.a3p">Gwangalli is steps away — Gwangan Bridge makes the backdrop.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="head">
+      <p class="script" data-i18n="promise.script">what we believe</p>
+      <h2 class="display" data-i18n="whyus.title">What Makes Our Donuts Different</h2>
+    </div>
+    <ul class="promise">
+      <li><span class="emo" aria-hidden="true">👐</span><div><h3 data-i18n="whyus.fresh.h">Handmade Before Sunrise</h3><p data-i18n="whyus.fresh.p">Our day starts in the dark — dough, filling and glaze are all made by hand, from scratch, every single morning.</p></div></li>
+      <li><span class="emo" aria-hidden="true">⚖️</span><div><h3 data-i18n="whyus.notsweet.h">Not Too Sweet</h3><p data-i18n="whyus.notsweet.p">Korean dessert lovers care about one thing above all: sweetness that doesn't overwhelm. We hold back the sugar so every bite stays balanced, never sickly-sweet.</p></div></li>
+      <li><span class="emo" aria-hidden="true">😋</span><div><h3 data-i18n="whyus.notboring.h">A Sweetness You'll Never Get Tired Of</h3><p data-i18n="whyus.notboring.p">Balanced doesn't mean bland. Our filling is rich enough to crave, light enough to finish the whole box without feeling weighed down.</p></div></li>
+      <li><span class="emo" aria-hidden="true">💥</span><div><h3 data-i18n="whyus.stereotype.h">We're Rewriting What a Donut Can Be</h3><p data-i18n="whyus.stereotype.p">Forget the greasy, mass-produced donut you know. Ours is handmade, filling-forward, and made to be taken seriously as a dessert — not just a quick bite.</p></div></li>
+      <li><span class="emo" aria-hidden="true">💬</span><div><h3 data-i18n="whyus.feedback.h">Your Feedback Comes First</h3><p data-i18n="whyus.feedback.p">If something isn't quite right, just tell us — anytime. Listening to our customers matters more to us than anything else.</p></div></li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <div class="story">
+      <img class="logo-ink" src="bear-logo.png" alt="Black Bear Doughnut logo — a standing black bear" width="394" height="400" loading="lazy">
+      <div class="copy">
+        <p class="script">since 2019</p>
+        <h2 class="display">The bear by the beach</h2>
+        <p class="lede">We opened by Gwangalli in 2019, one of Busan's first handmade-donut shops. The routine hasn't changed since: the lights come on before sunrise, the dough is mixed by hand, and whatever we make today is sold today.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="visit">
+    <div class="visit">
+      <div class="visit-top">
+        <div class="head">
+          <p class="script" data-i18n="visit.script">see you soon</p>
+          <h2 class="display" data-i18n="visit.h">Visit us</h2>
+        </div>
+        <img src="bear-mark.png" alt="" width="125" height="280">
+      </div>
+      <div class="addr">
+        <div>12, Gwanganhaebyeon-ro 255beon-gil, Suyeong-gu, Busan 48285</div>
+        <div class="kr">부산광역시 수영구 광안해변로255번길 12</div>
+      </div>
+      <div class="row">
+        <a class="btn btn-primary" href="https://maps.app.goo.gl/g9EJB3ZToqhamKCu8" target="_blank" rel="noopener"><span aria-hidden="true">📍</span> <span data-i18n="nav.getDirections">Get Directions</span></a>
+        <button class="btn btn-line js-taxi" type="button"><span aria-hidden="true">🚕</span> <span data-i18n="nav.taxi">Taxi card</span></button>
+      </div>
+      <p class="note" data-i18n="visit.note">Come earlier for the full lineup — once today's batch sells out, it's gone. Check today's hours on Google Maps.</p>
+      <p class="note">+82 70-7798-1190</p>
+    </div>
+  </section>
+
+  <footer>
+    <img class="logo-ink" src="bear-logo.png" alt="Black Bear Doughnut" width="394" height="400" loading="lazy">
+    <p>Gwangalli Beach, Busan · Made this morning, sold today only</p>
+  </footer>
+</div>
+
+<nav class="actionbar" aria-label="Quick actions">
+  <div class="actionbar-inner">
+    <a class="btn btn-primary" href="https://maps.app.goo.gl/g9EJB3ZToqhamKCu8" target="_blank" rel="noopener"><span aria-hidden="true">📍</span> <span data-i18n="nav.getDirections">Get Directions</span></a>
+    <button class="btn btn-line js-taxi" type="button"><span aria-hidden="true">🚕</span> <span data-i18n="nav.taxi">Taxi card</span></button>
+  </div>
+</nav>
+
+<dialog class="taxi" id="taxiCard" aria-labelledby="taxiTitle">
+  <div class="taxi-inner">
+    <p class="label" id="taxiTitle" data-i18n="taxi.title">Show this to your taxi driver</p>
+    <div class="taxi-kr" id="taxiText">
+      <div class="name">블랙베어도넛</div>
+      <div class="addr-kr">부산 수영구<br>광안해변로255번길 12</div>
+      <div class="please">여기로 가주세요 🙏</div>
+    </div>
+    <div class="taxi-btns">
+      <button class="btn btn-line" type="button" id="taxiCopy" data-i18n="taxi.copy">Copy address</button>
+      <button class="btn btn-primary" type="button" id="taxiClose" data-i18n="taxi.close">Close</button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  var I18N = {
+    en: {
+      "nav.getDirections":"Get Directions", "nav.taxi":"Taxi card",
+      "hero.script":"Good morning from Gwangalli",
+      "hero.h1":"Made this<br>morning.",
+      "hero.today":"Sold today only.",
+      "hero.sub":"Handmade donuts steps from Gwangalli Beach. Not too sweet, generously filled, and never kept for tomorrow.",
+      "best.script":"our all-time best seller",
+      "best.p":"Our signature: a crackly caramelized sugar top over soft, silky cream — torched to order, so it's still warm when it reaches you. Best eaten within a minute.",
+      "best.t1":"Torched to order", "best.t2":"Crackly caramel top", "best.t3":"Silky cream",
+      "lineup.script":"pick your favorite",
+      "lineup.title":"Our Donut Lineup",
+      "lineup.sub":"Swipe to see more. Flavors rotate with the seasons — ask us what's on the shelf today.",
+      "chip.all":"All", "chip.fruity":"Fruity", "chip.nutty":"Nutty", "chip.choco":"Chocolate", "chip.tea":"Tea &amp; Matcha",
+      "box.script":"can't choose?",
+      "box.h":"Try nine in one box",
+      "box.p":"Nine mini donuts, nine flavors — made for sharing with your travel crew, or for a hotel-room tasting night.",
+      "only.script":"only here", "only.h":"Only in Busan", "only.p":"Two flavors you won't find anywhere else.",
+      "route.script":"a perfect Gwangalli afternoon",
+      "route.h":"Donut, ade, then the beach",
+      "route.a1h":"Pick your donuts", "route.a1p":"Two for you, one to share.",
+      "route.a2h":"Grab an ade", "route.a2p":"House-made fruit syrup, one whole can of soda per cup.",
+      "route.a3h":"Walk to the beach", "route.a3p":"Gwangalli is steps away — Gwangan Bridge makes the backdrop.",
+      "promise.script":"what we believe",
+      "whyus.title":"What Makes Our Donuts Different",
+      "whyus.fresh.h":"Handmade Before Sunrise",
+      "whyus.fresh.p":"Our day starts in the dark — dough, filling and glaze are all made by hand, from scratch, every single morning.",
+      "whyus.notsweet.h":"Not Too Sweet",
+      "whyus.notsweet.p":"Korean dessert lovers care about one thing above all: sweetness that doesn't overwhelm. We hold back the sugar so every bite stays balanced, never sickly-sweet.",
+      "whyus.notboring.h":"A Sweetness You'll Never Get Tired Of",
+      "whyus.notboring.p":"Balanced doesn't mean bland. Our filling is rich enough to crave, light enough to finish the whole box without feeling weighed down.",
+      "whyus.stereotype.h":"We're Rewriting What a Donut Can Be",
+      "whyus.stereotype.p":"Forget the greasy, mass-produced donut you know. Ours is handmade, filling-forward, and made to be taken seriously as a dessert — not just a quick bite.",
+      "whyus.feedback.h":"Your Feedback Comes First",
+      "whyus.feedback.p":"If something isn't quite right, just tell us — anytime. Listening to our customers matters more to us than anything else.",
+      "visit.script":"see you soon", "visit.h":"Visit us",
+      "visit.note":"Come earlier for the full lineup — once today's batch sells out, it's gone. Check today's hours on Google Maps.",
+      "taxi.title":"Show this to your taxi driver", "taxi.copy":"Copy address", "taxi.copied":"Copied ✓", "taxi.close":"Close"
+    },
+    ja: {
+      "nav.getDirections":"道順を見る", "nav.taxi":"タクシー用カード",
+      "hero.script":"おはよう、クァンアンリから",
+      "hero.h1":"今朝、<br>つくりました。",
+      "hero.today":"販売は今日だけ。",
+      "hero.sub":"クァンアンリビーチのすぐそばで作る、手作りドーナツ。甘さ控えめ、フィリングたっぷり。翌日に持ち越すことはありません。",
+      "best.script":"不動の人気No.1",
+      "best.p":"看板メニュー。パリッとキャラメリゼした砂糖の下に、なめらかなクリーム。注文ごとにバーナーで仕上げるので、温かいうちにお届けします。1分以内に召し上がるのがおすすめ。",
+      "best.t1":"注文後にバーナー", "best.t2":"パリパリのキャラメル", "best.t3":"なめらかクリーム",
+      "lineup.script":"お気に入りを見つけて",
+      "lineup.title":"ドーナツラインナップ",
+      "lineup.sub":"横にスワイプしてご覧ください。季節ごとにメニューが変わるので、今日のラインナップは店頭でお尋ねください。",
+      "chip.all":"すべて", "chip.fruity":"フルーティー", "chip.nutty":"ナッツ", "chip.choco":"チョコ", "chip.tea":"紅茶・抹茶",
+      "box.script":"選べないなら",
+      "box.h":"ミニサイズ9個を1箱で",
+      "box.p":"ミニドーナツ9個、9つの味。旅の仲間とシェアしたり、ホテルで食べ比べしたり。",
+      "only.script":"ここだけ", "only.h":"釜山だけの味", "only.p":"ここでしか出会えない2つの味。",
+      "route.script":"クァンアンリの午後の過ごし方",
+      "route.h":"ドーナツ、エイド、そしてビーチへ",
+      "route.a1h":"ドーナツを選ぶ", "route.a1p":"自分用に2つ、シェア用に1つ。",
+      "route.a2h":"エイドをテイクアウト", "route.a2p":"自家製フルーツシロップに、1杯につきソーダ1缶。",
+      "route.a3h":"ビーチへ歩いて", "route.a3p":"クァンアンリビーチはすぐそこ。背景には広安大橋。",
+      "promise.script":"私たちが大切にしていること",
+      "whyus.title":"私たちのドーナツが選ばれる理由",
+      "whyus.fresh.h":"夜明け前から、手作り",
+      "whyus.fresh.p":"私たちの一日は、まだ暗いうちから始まります。生地もフィリングもグレーズも、毎朝一から手作りしています。",
+      "whyus.notsweet.h":"甘すぎない、韓国式の上品な甘さ",
+      "whyus.notsweet.p":"韓国のデザート好きが一番大切にするのは「甘すぎないこと」。砂糖控えめで、最後まで重くならない上品な甘さに仕上げています。",
+      "whyus.notboring.h":"飽きのこない甘さ",
+      "whyus.notboring.p":"控えめだからといって物足りないわけではありません。もう一口食べたくなる満足感がありながら、箱ごと食べても重くならない軽やかさです。",
+      "whyus.stereotype.h":"ドーナツの常識を変えます",
+      "whyus.stereotype.p":"ベタベタ甘い大量生産のドーナツとは違います。手作りでフィリングたっぷり、れっきとしたデザートとして楽しんでいただけます。",
+      "whyus.feedback.h":"お客様の声を一番大切に",
+      "whyus.feedback.p":"何か気になることがあれば、いつでもお気軽にお知らせください。私たちにとって一番大切なのは、お客様の声に耳を傾けることです。",
+      "visit.script":"お待ちしています", "visit.h":"お店へのアクセス",
+      "visit.note":"全種類そろうのは早い時間。売り切れ次第終了です。今日の営業時間はGoogleマップでご確認ください。",
+      "taxi.title":"タクシーの運転手さんに見せてください", "taxi.copy":"住所をコピー", "taxi.copied":"コピーしました ✓", "taxi.close":"閉じる"
+    },
+    zh: {
+      "nav.getDirections":"查看路线", "nav.taxi":"出租车卡片",
+      "hero.script":"来自广安里的早安",
+      "hero.h1":"今早<br>现做。",
+      "hero.today":"只卖今天。",
+      "hero.sub":"广安里海滩旁的手工甜甜圈。不太甜、内馅满满,绝不留到明天。",
+      "best.script":"人气常年第一",
+      "best.p":"我们的招牌:酥脆的焦糖脆壳下,是柔滑的奶油内馅。现点现烤,送到你手上时还是温热的。建议一分钟内享用。",
+      "best.t1":"现点现烤", "best.t2":"酥脆焦糖层", "best.t3":"丝滑奶油",
+      "lineup.script":"找到你的最爱",
+      "lineup.title":"甜甜圈系列",
+      "lineup.sub":"左右滑动查看更多。口味随季节更换,今天有哪些款式,欢迎到店询问。",
+      "chip.all":"全部", "chip.fruity":"果香", "chip.nutty":"坚果", "chip.choco":"巧克力", "chip.tea":"茶・抹茶",
+      "box.script":"选不出来?",
+      "box.h":"一盒尝遍九种口味",
+      "box.p":"九个迷你甜甜圈、九种口味——适合和旅伴分享,或在酒店里来一场试吃之夜。",
+      "only.script":"仅此一家", "only.h":"釜山限定", "only.p":"别处吃不到的两种口味。",
+      "route.script":"完美的广安里午后",
+      "route.h":"甜甜圈、气泡饮,然后去海边",
+      "route.a1h":"挑甜甜圈", "route.a1p":"两个自己吃,一个拿来分享。",
+      "route.a2h":"带一杯气泡饮", "route.a2p":"自制果汁糖浆,每杯用一整罐苏打水。",
+      "route.a3h":"走去海边", "route.a3p":"广安里海滩就在附近,背景就是广安大桥。",
+      "promise.script":"我们的坚持",
+      "whyus.title":"我们的甜甜圈,与众不同",
+      "whyus.fresh.h":"天亮前,纯手工制作",
+      "whyus.fresh.p":"我们的一天从天还没亮就开始了——面团、内馅和糖霜,每天早上都从零开始纯手工制作。",
+      "whyus.notsweet.h":"不会太甜,更懂韩式甜点",
+      "whyus.notsweet.p":"韩国人挑选甜点时最看重的一点就是——不能太甜。我们特意减少用糖量,让每一口都清爽不腻。",
+      "whyus.notboring.h":"甜而不腻,吃多少都不腻",
+      "whyus.notboring.p":"清爽不代表寡淡。内馅浓郁到让人一口接一口,却不会让人吃完就觉得腻。",
+      "whyus.stereotype.h":"打破你对甜甜圈的刻板印象",
+      "whyus.stereotype.p":"忘掉那些油腻的量产甜甜圈吧。我们的甜甜圈纯手工制作、内馅十足,值得被当作一道正经的甜点来品尝。",
+      "whyus.feedback.h":"顾客的意见,我们最重视",
+      "whyus.feedback.p":"如果有任何不满意的地方,请随时告诉我们。倾听顾客的声音,对我们来说比什么都重要。",
+      "visit.script":"等你来", "visit.h":"到店指南",
+      "visit.note":"早点来选择更多——当天售完即止。今日营业时间请查看谷歌地图。",
+      "taxi.title":"请出示给出租车司机", "taxi.copy":"复制地址", "taxi.copied":"已复制 ✓", "taxi.close":"关闭"
+    },
+    vi: {
+      "nav.getDirections":"Xem chỉ đường", "nav.taxi":"Thẻ taxi",
+      "hero.script":"Chào buổi sáng từ Gwangalli",
+      "hero.h1":"Làm<br>sáng nay.",
+      "hero.today":"Chỉ bán trong hôm nay.",
+      "hero.sub":"Bánh donut thủ công ngay cạnh bãi biển Gwangalli. Không quá ngọt, nhân đầy đặn, và không bao giờ để sang ngày mai.",
+      "best.script":"Món bán chạy nhất mọi thời đại",
+      "best.p":"Món đặc trưng của chúng tôi: lớp đường caramel giòn tan phủ trên nhân kem mềm mịn — khò lửa ngay khi bạn gọi nên vẫn còn ấm khi đến tay bạn. Ngon nhất khi ăn trong vòng một phút.",
+      "best.t1":"Khò lửa khi gọi", "best.t2":"Lớp caramel giòn", "best.t3":"Kem mềm mịn",
+      "lineup.script":"Chọn vị bạn thích",
+      "lineup.title":"Các loại bánh donut",
+      "lineup.sub":"Vuốt sang để xem thêm. Hương vị thay đổi theo mùa — hãy hỏi chúng tôi hôm nay có những loại nào nhé.",
+      "chip.all":"Tất cả", "chip.fruity":"Vị trái cây", "chip.nutty":"Vị hạt", "chip.choco":"Sô-cô-la", "chip.tea":"Trà &amp; Matcha",
+      "box.script":"Không chọn được?",
+      "box.h":"Thử chín vị trong một hộp",
+      "box.p":"Chín chiếc donut mini, chín hương vị — để chia sẻ cùng bạn đồng hành, hoặc thưởng thức trong khách sạn.",
+      "only.script":"chỉ có ở đây", "only.h":"Chỉ có ở Busan", "only.p":"Hai hương vị bạn không tìm thấy ở nơi nào khác.",
+      "route.script":"Một buổi chiều Gwangalli trọn vẹn",
+      "route.h":"Donut, nước ade, rồi ra biển",
+      "route.a1h":"Chọn donut", "route.a1p":"Hai cái cho bạn, một cái để chia sẻ.",
+      "route.a2h":"Mang theo một ly ade", "route.a2p":"Siro trái cây tự làm, mỗi ly một lon soda.",
+      "route.a3h":"Đi bộ ra biển", "route.a3p":"Bãi biển Gwangalli ngay gần đó — cầu Gwangan làm phông nền.",
+      "promise.script":"Điều chúng tôi tin",
+      "whyus.title":"Điều làm nên sự khác biệt của bánh donut chúng tôi",
+      "whyus.fresh.h":"Làm thủ công từ trước bình minh",
+      "whyus.fresh.p":"Ngày của chúng tôi bắt đầu từ khi trời còn tối — vỏ bánh, nhân và lớp phủ đều được làm thủ công từ đầu, mỗi buổi sáng.",
+      "whyus.notsweet.h":"Không quá ngọt, đúng gu người Hàn",
+      "whyus.notsweet.p":"Điều người Hàn quan tâm nhất ở món tráng miệng là không được quá ngọt. Chúng tôi giảm lượng đường để mỗi miếng bánh đều thanh, không hề ngấy.",
+      "whyus.notboring.h":"Vị ngọt ăn hoài không chán",
+      "whyus.notboring.p":"Thanh nhưng không nhạt. Phần nhân đủ đậm đà để khiến bạn muốn ăn thêm, nhưng đủ nhẹ để ăn hết cả hộp mà không thấy ngán.",
+      "whyus.stereotype.h":"Phá vỡ định kiến về bánh donut",
+      "whyus.stereotype.p":"Quên đi những chiếc donut ngấy dầu, sản xuất hàng loạt mà bạn từng biết. Bánh của chúng tôi làm thủ công, đầy nhân, xứng đáng được thưởng thức như một món tráng miệng thực thụ.",
+      "whyus.feedback.h":"Ý Kiến Của Bạn Là Ưu Tiên Số Một",
+      "whyus.feedback.p":"Nếu có điều gì chưa ổn, hãy cho chúng tôi biết bất cứ lúc nào. Lắng nghe khách hàng là điều chúng tôi coi trọng nhất.",
+      "visit.script":"Hẹn gặp bạn", "visit.h":"Ghé thăm chúng tôi",
+      "visit.note":"Đến sớm để có đủ các loại — hết mẻ hôm nay là hết. Xem giờ mở cửa hôm nay trên Google Maps.",
+      "taxi.title":"Đưa màn hình này cho tài xế taxi", "taxi.copy":"Sao chép địa chỉ", "taxi.copied":"Đã sao chép ✓", "taxi.close":"Đóng"
+    },
+    id: {
+      "nav.getDirections":"Lihat Rute", "nav.taxi":"Kartu taksi",
+      "hero.script":"Selamat pagi dari Gwangalli",
+      "hero.h1":"Dibuat<br>pagi ini.",
+      "hero.today":"Dijual hari ini saja.",
+      "hero.sub":"Donat buatan tangan di dekat Pantai Gwangalli. Tidak terlalu manis, isian melimpah, dan tidak pernah disimpan untuk besok.",
+      "best.script":"Terlaris sepanjang masa",
+      "best.p":"Menu andalan kami: lapisan gula karamel yang renyah di atas krim lembut — dibakar saat dipesan, jadi masih hangat saat sampai di tangan Anda. Paling nikmat disantap dalam satu menit.",
+      "best.t1":"Dibakar saat dipesan", "best.t2":"Karamel renyah", "best.t3":"Krim lembut",
+      "lineup.script":"Pilih favoritmu",
+      "lineup.title":"Pilihan Donat Kami",
+      "lineup.sub":"Geser untuk melihat lainnya. Rasa berganti mengikuti musim — tanyakan kepada kami apa yang tersedia hari ini.",
+      "chip.all":"Semua", "chip.fruity":"Buah", "chip.nutty":"Kacang", "chip.choco":"Cokelat", "chip.tea":"Teh &amp; Matcha",
+      "box.script":"Bingung memilih?",
+      "box.h":"Coba sembilan rasa dalam satu kotak",
+      "box.p":"Sembilan donat mini, sembilan rasa — untuk dinikmati bersama teman perjalanan, atau mencicipi semuanya di hotel.",
+      "only.script":"hanya di sini", "only.h":"Hanya di Busan", "only.p":"Dua rasa yang tidak akan Anda temukan di tempat lain.",
+      "route.script":"Sore sempurna di Gwangalli",
+      "route.h":"Donat, ade, lalu ke pantai",
+      "route.a1h":"Pilih donat", "route.a1p":"Dua untukmu, satu untuk berbagi.",
+      "route.a2h":"Bawa segelas ade", "route.a2p":"Sirup buah buatan sendiri, satu kaleng soda per gelas.",
+      "route.a3h":"Jalan ke pantai", "route.a3p":"Pantai Gwangalli hanya beberapa langkah — Jembatan Gwangan jadi latarnya.",
+      "promise.script":"Yang kami yakini",
+      "whyus.title":"Yang Membuat Donat Kami Berbeda",
+      "whyus.fresh.h":"Dibuat Tangan Sebelum Matahari Terbit",
+      "whyus.fresh.p":"Hari kami dimulai saat masih gelap — adonan, isian, dan glasir semuanya dibuat tangan dari nol, setiap pagi.",
+      "whyus.notsweet.h":"Tidak Terlalu Manis, Selera Korea",
+      "whyus.notsweet.p":"Hal yang paling diperhatikan pecinta dessert Korea adalah rasa manis yang tidak berlebihan. Kami mengurangi gula agar setiap gigitan tetap seimbang, tidak eneg.",
+      "whyus.notboring.h":"Manis yang Tidak Bikin Bosan",
+      "whyus.notboring.p":"Seimbang bukan berarti hambar. Isiannya cukup kaya rasa untuk bikin ketagihan, tapi cukup ringan untuk dihabiskan sekotak penuh tanpa terasa berat.",
+      "whyus.stereotype.h":"Mendobrak Stereotip Donat",
+      "whyus.stereotype.p":"Lupakan donat berminyak produksi massal yang biasa Anda kenal. Donat kami dibuat tangan, isiannya melimpah, dan layak dinikmati sebagai dessert sungguhan.",
+      "whyus.feedback.h":"Masukan Anda Adalah Prioritas Kami",
+      "whyus.feedback.p":"Jika ada yang kurang pas, beri tahu kami kapan saja. Mendengarkan pelanggan adalah hal yang paling penting bagi kami.",
+      "visit.script":"Sampai jumpa", "visit.h":"Kunjungi kami",
+      "visit.note":"Datang lebih awal untuk pilihan lengkap — kalau sudah habis, ya habis. Cek jam buka hari ini di Google Maps.",
+      "taxi.title":"Tunjukkan ini ke sopir taksi", "taxi.copy":"Salin alamat", "taxi.copied":"Tersalin ✓", "taxi.close":"Tutup"
+    },
+    th: {
+      "nav.getDirections":"ดูเส้นทาง", "nav.taxi":"การ์ดแท็กซี่",
+      "hero.script":"อรุณสวัสดิ์จากกวางอันรี",
+      "hero.h1":"ทำสด<br>เช้านี้",
+      "hero.today":"ขายแค่วันนี้",
+      "hero.sub":"โดนัทโฮมเมดใกล้หาดกวางอันรี หวานน้อย ไส้แน่น และไม่เก็บไว้ขายพรุ่งนี้",
+      "best.script":"ขายดีอันดับ 1 ตลอดกาล",
+      "best.p":"เมนูซิกเนเจอร์ของเรา: ท็อปน้ำตาลคาราเมลกรอบ ๆ บนครีมเนื้อนุ่ม เบิร์นสดตอนสั่ง จึงยังอุ่นอยู่ตอนถึงมือคุณ อร่อยที่สุดถ้ากินภายใน 1 นาที",
+      "best.t1":"เบิร์นสดตอนสั่ง", "best.t2":"คาราเมลกรอบ", "best.t3":"ครีมเนื้อนุ่ม",
+      "lineup.script":"เลือกรสที่ชอบ",
+      "lineup.title":"โดนัทของเรา",
+      "lineup.sub":"ปัดเพื่อดูเพิ่มเติม รสชาติเปลี่ยนไปตามฤดูกาล สอบถามเราได้ว่าวันนี้มีอะไรบ้าง",
+      "chip.all":"ทั้งหมด", "chip.fruity":"ผลไม้", "chip.nutty":"ถั่ว", "chip.choco":"ช็อกโกแลต", "chip.tea":"ชาและมัทฉะ",
+      "box.script":"เลือกไม่ได้ใช่ไหม",
+      "box.h":"ลองครบ 9 รสในกล่องเดียว",
+      "box.p":"มินิโดนัท 9 ชิ้น 9 รสชาติ แบ่งกันกินกับเพื่อนร่วมทริป หรือชิมทุกรสที่โรงแรม",
+      "only.script":"มีที่นี่ที่เดียว", "only.h":"มีแค่ที่ปูซาน", "only.p":"สองรสชาติที่หาที่อื่นไม่ได้",
+      "route.script":"บ่ายสบาย ๆ ที่กวางอันรี",
+      "route.h":"โดนัท เอด แล้วไปทะเล",
+      "route.a1h":"เลือกโดนัท", "route.a1p":"สองชิ้นให้ตัวเอง อีกชิ้นไว้แบ่ง",
+      "route.a2h":"หยิบเอดสักแก้ว", "route.a2p":"น้ำเชื่อมผลไม้ทำเอง ใช้โซดาเต็มกระป๋องต่อแก้ว",
+      "route.a3h":"เดินไปทะเล", "route.a3p":"หาดกวางอันรีอยู่ใกล้ ๆ มีสะพานกวางอันเป็นฉากหลัง",
+      "promise.script":"สิ่งที่เรายึดมั่น",
+      "whyus.title":"จุดเด่นของโดนัทเรา",
+      "whyus.fresh.h":"ทำมือตั้งแต่ก่อนฟ้าสาง",
+      "whyus.fresh.p":"วันของเราเริ่มตั้งแต่ฟ้ายังมืด ทั้งแป้ง ไส้ และหน้าโดนัท ทำด้วยมือจากศูนย์ทุกเช้า",
+      "whyus.notsweet.h":"หวานน้อย ถูกใจสายเกาหลี",
+      "whyus.notsweet.p":"สิ่งที่คนเกาหลีให้ความสำคัญที่สุดกับของหวานคือ ต้องไม่หวานเกินไป เราลดปริมาณน้ำตาลลง เพื่อให้ทุกคำยังคงความกลมกล่อม ไม่หวานจนเลี่ยน",
+      "whyus.notboring.h":"หวานแบบไม่มีเบื่อ",
+      "whyus.notboring.p":"กลมกล่อมไม่ได้แปลว่าจืดชืด ไส้ของเราเข้มข้นพอให้อยากกินต่อ แต่เบาพอให้กินหมดกล่องโดยไม่รู้สึกเลี่ยน",
+      "whyus.stereotype.h":"ทลายภาพจำเดิมๆ ของโดนัท",
+      "whyus.stereotype.p":"ลืมโดนัทมันๆ ที่ผลิตจำนวนมากแบบที่คุณเคยรู้จักไปได้เลย โดนัทของเราทำมือ ไส้แน่น และคู่ควรกับการเป็นของหวานที่จริงจังจานหนึ่ง",
+      "whyus.feedback.h":"ความคิดเห็นของคุณสำคัญที่สุดสำหรับเรา",
+      "whyus.feedback.p":"หากมีอะไรไม่ถูกใจ บอกเราได้ทุกเมื่อ การรับฟังลูกค้าคือสิ่งที่เราให้ความสำคัญมากที่สุด",
+      "visit.script":"แล้วพบกันนะ", "visit.h":"มาหาเรา",
+      "visit.note":"มาเร็วจะได้เลือกครบทุกรส ขายหมดแล้วหมดเลย เช็กเวลาเปิดวันนี้ใน Google Maps",
+      "taxi.title":"ให้คนขับแท็กซี่ดูหน้านี้", "taxi.copy":"คัดลอกที่อยู่", "taxi.copied":"คัดลอกแล้ว ✓", "taxi.close":"ปิด"
+    }
+  };
+  var lang = 'en';
+
+  function applyLang(l){
+    lang = I18N[l] ? l : 'en';
+    var dict = I18N[lang];
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k = el.getAttribute('data-i18n');
+      if(dict[k] !== undefined) el.innerHTML = dict[k];
+    });
+    document.documentElement.lang = lang;
+    try{ localStorage.setItem('bbd-lang', lang); }catch(e){}
+  }
+  var sel = document.getElementById('langSelect');
+  var saved = 'en';
+  try{ saved = localStorage.getItem('bbd-lang') || 'en'; }catch(e){}
+  if(!I18N[saved]) saved = 'en';
+  sel.value = saved;
+  applyLang(saved);
+  sel.addEventListener('change', function(){ applyLang(this.value); });
+
+  /* lineup: peek carousel + mood filter */
+  var track = document.getElementById('lineupTrack');
+  var slides = Array.prototype.slice.call(track.querySelectorAll('.slide'));
+  var curN = document.getElementById('curN'), totN = document.getElementById('totN');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function visible(){ return slides.filter(function(s){ return !s.hidden; }); }
+  function currentIndex(){
+    var vs = visible(), mid = track.scrollLeft + track.clientWidth / 2, best = 0, bestD = Infinity;
+    vs.forEach(function(s, i){
+      var c = s.offsetLeft + s.offsetWidth / 2, d = Math.abs(c - mid);
+      if(d < bestD){ bestD = d; best = i; }
+    });
+    return best;
+  }
+  function go(i){
+    var vs = visible(); if(!vs.length) return;
+    i = ((i % vs.length) + vs.length) % vs.length;
+    var s = vs[i];
+    track.scrollTo({ left: s.offsetLeft + s.offsetWidth / 2 - track.clientWidth / 2, behavior: reduce ? 'auto' : 'smooth' });
+  }
+  function update(){ curN.textContent = currentIndex() + 1; totN.textContent = visible().length; }
+  var ticking = false;
+  track.addEventListener('scroll', function(){
+    if(ticking) return; ticking = true;
+    requestAnimationFrame(function(){ update(); ticking = false; });
+  }, { passive: true });
+  document.getElementById('lineupPrev').addEventListener('click', function(){ go(currentIndex() - 1); });
+  document.getElementById('lineupNext').addEventListener('click', function(){ go(currentIndex() + 1); });
+  track.addEventListener('keydown', function(e){
+    if(e.key === 'ArrowRight'){ e.preventDefault(); go(currentIndex() + 1); }
+    if(e.key === 'ArrowLeft'){ e.preventDefault(); go(currentIndex() - 1); }
+  });
+  var chips = document.querySelectorAll('.chip');
+  chips.forEach(function(c){
+    c.addEventListener('click', function(){
+      var f = c.getAttribute('data-filter');
+      chips.forEach(function(x){ x.setAttribute('aria-pressed', x === c ? 'true' : 'false'); });
+      slides.forEach(function(s){ s.hidden = !(f === 'all' || s.getAttribute('data-tags').split(' ').indexOf(f) > -1); });
+      track.scrollLeft = 0;
+      update();
+    });
+  });
+  update();
+
+  /* taxi card */
+  var dlg = document.getElementById('taxiCard');
+  function openTaxi(){
+    if(typeof dlg.showModal === 'function'){ try{ dlg.showModal(); return; }catch(e){} }
+    dlg.setAttribute('open', '');
+  }
+  function closeTaxi(){ if(typeof dlg.close === 'function') dlg.close(); else dlg.removeAttribute('open'); }
+  document.querySelectorAll('.js-taxi').forEach(function(b){ b.addEventListener('click', openTaxi); });
+  document.getElementById('taxiClose').addEventListener('click', closeTaxi);
+  dlg.addEventListener('click', function(e){ if(e.target === dlg) closeTaxi(); });
+  var copyBtn = document.getElementById('taxiCopy');
+  copyBtn.addEventListener('click', function(){
+    var text = '블랙베어도넛, 부산 수영구 광안해변로255번길 12';
+    function done(){ copyBtn.textContent = I18N[lang]['taxi.copied']; setTimeout(function(){ copyBtn.textContent = I18N[lang]['taxi.copy']; }, 1800); }
+    function fallback(){
+      var r = document.createRange(); r.selectNodeContents(document.getElementById('taxiText'));
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
