@@ -8,6 +8,9 @@
 <meta property="og:title" content="Black Bear Donut Busan">
 <meta property="og:description" content="Made this morning. Sold today only. Handmade donuts steps from Gwangalli Beach.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://blackbeardonut.github.io/">
+<meta property="og:image" content="https://blackbeardonut.github.io/hero-donut-cut2.jpg">
+<link rel="canonical" href="https://blackbeardonut.github.io/">
 <link rel="icon" type="image/png" href="bear-mark.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@400;500;600;700;800&family=Pinyon+Script&display=swap">
 <script type="application/ld+json">
@@ -25,6 +28,8 @@
     "addressCountry": "KR"
   },
   "description": "Handmade donuts made fresh every morning and sold the same day only, steps from Gwangalli Beach.",
+  "url": "https://blackbeardonut.github.io/",
+  "image": "https://blackbeardonut.github.io/hero-donut-cut2.jpg",
   "hasMap": "https://maps.app.goo.gl/g9EJB3ZToqhamKCu8"
 }
 </script>
@@ -401,6 +406,7 @@
   .visit .btn-primary{ background: #FAF4E8; color: #161211; box-shadow:none; }
   .visit .btn-line{ color: #FAF4E8; border-color: rgba(250,244,232,.5); }
   .visit .btn-line:hover{ background: rgba(255,255,255,.08); }
+  .visit .tel-link{ color: var(--on-ink); text-decoration: underline; text-underline-offset: 3px; }
   .visit .note{ color: var(--on-ink-muted); font-size: 13.5px; line-height: 1.5; }
 
   footer{ padding-block: 34px 10px; display:grid; gap: 10px; justify-items:center; text-align:center; }
@@ -445,6 +451,14 @@
     .btn, .chip{ transition: none; }
   }
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18443696478"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18443696478');
+</script>
 </head>
 <body>
 <div class="wrap">
@@ -620,7 +634,7 @@
         <button class="btn btn-line js-taxi" type="button"><span aria-hidden="true">🚕</span> <span data-i18n="nav.taxi">Taxi card</span></button>
       </div>
       <p class="note" data-i18n="visit.note">Come earlier for the full lineup — once today's batch sells out, it's gone. Check today's hours on Google Maps.</p>
-      <p class="note">+82 70-7798-1190</p>
+      <p class="note"><a href="tel:+827077981190" class="tel-link">📞 +82 70-7798-1190</a></p>
     </div>
   </section>
 
@@ -964,6 +978,27 @@
       }, { threshold: 0.25 }).observe(route);
     } else { route.classList.add('live'); }
   }
+
+  /* conversion tracking: fill each label from Google Ads (the part after the slash in send_to) */
+  var ADS_ID = 'AW-18443696478';
+  var CONV_LABELS = {
+    directions: '',   // Directions click
+    taxi: '',         // Taxi card open
+    call: ''          // Call click
+  };
+  var EVENT_NAMES = { directions: 'get_directions', taxi: 'open_taxi_card', call: 'click_call' };
+  function trackConv(kind){
+    if(typeof window.gtag !== 'function') return;
+    window.gtag('event', EVENT_NAMES[kind], { event_category: 'visit_intent' });
+    if(CONV_LABELS[kind]) window.gtag('event', 'conversion', { send_to: ADS_ID + '/' + CONV_LABELS[kind] });
+  }
+  document.addEventListener('click', function(e){
+    var el = e.target.closest ? e.target.closest('a, button') : null;
+    if(!el) return;
+    if(el.matches('a[href*="maps.app.goo.gl"]')) trackConv('directions');
+    else if(el.classList.contains('js-taxi')) trackConv('taxi');
+    else if(el.matches('a[href^="tel:"]')) trackConv('call');
+  }, true);
 
   /* taxi card */
   var dlg = document.getElementById('taxiCard');
