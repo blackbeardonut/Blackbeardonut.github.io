@@ -237,7 +237,7 @@
   .ticker i{ font-style: normal; color: var(--accent); }
   @keyframes slide{ to{ transform: translateX(-50%); } }
 
-  section.block{ padding-block: 34px; display:grid; gap: 18px; }
+  section.block{ padding-block: 34px; display:grid; gap: 18px; scroll-margin-top: 64px; }
   .head{ display:grid; gap: 8px; }
 
   /* best seller */
@@ -315,6 +315,7 @@
   .only-card .emo{ font-size: 30px; line-height: 1; }
   .only-card h3{ font: 400 22px/1.05 "Anton", "Impact", sans-serif; text-transform: uppercase; letter-spacing: .01em; }
   .only-card p{ color: var(--muted); font-size: 14px; line-height: 1.5; }
+  .season-tag{ justify-self: start; background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: .04em; padding: 4px 10px; border-radius: 999px; margin-top: 4px; }
   @media (max-width: 400px){ .only{ grid-template-columns: 1fr; } }
 
   /* afternoon route */
@@ -338,7 +339,7 @@
     content:""; position:absolute; inset: -2px; border-radius: 50%;
     border: 2px solid var(--accent); opacity: 0; pointer-events: none;
   }
-  /* each stop lights up in turn: donut → ade → beach */
+  /* each stop lights up in turn: donut → coffee → beach */
   .route.live .dot{ animation: stepglow 4.5s ease-in-out infinite; }
   .route.live .stop:nth-child(2) .dot{ animation-delay: 1.5s; }
   .route.live .stop:nth-child(3) .dot{ animation-delay: 3s; }
@@ -405,6 +406,8 @@
   footer{ padding-block: 34px 10px; display:grid; gap: 10px; justify-items:center; text-align:center; }
   footer img{ width: 76px; height:auto; }
   footer p{ color: var(--muted); font-size: 13px; }
+  footer .motto{ color: var(--accent); font-size: clamp(26px, 7vw, 34px); line-height: 1.15; max-width: 22ch; text-wrap: balance; margin-block: 4px 2px; }
+  html:is(:lang(ja), :lang(zh), :lang(th)) footer .motto{ max-width: none; font-size: 18px; letter-spacing: .02em; }
 
   /* sticky action bar */
   .actionbar{
@@ -488,7 +491,7 @@
     </div>
   </div>
 
-  <section class="block">
+  <section class="block" id="signature">
     <div class="best">
       <div class="best-photo">
         <img src="creme-brulee.jpg" alt="Crème Brûlée donut poster — a delicate crackle, a soft heart" width="1000" height="1413" loading="lazy">
@@ -507,11 +510,11 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" id="lineup">
     <div class="head">
       <p class="script" data-i18n="lineup.script">pick your favorite</p>
       <h2 class="display" data-i18n="lineup.title">Our Donut Lineup</h2>
-      <p class="lede" data-i18n="lineup.sub">Swipe to see more. Flavors rotate with the seasons — ask us what's on the shelf today.</p>
+      <p class="lede" data-i18n="lineup.sub">Swipe to see more. Flavors rotate with the seasons.</p>
     </div>
     <div class="chips" role="group" aria-label="Filter by flavor">
       <button class="chip" type="button" data-filter="all" aria-pressed="true" data-i18n="chip.all">All</button>
@@ -539,7 +542,7 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" id="giftbox">
     <div class="box">
       <img src="mini-donut-box.jpg" alt="Nine-piece mini donut box" loading="lazy" width="1000" height="1413">
       <div class="copy">
@@ -550,31 +553,31 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" id="seasonal">
     <div class="head">
       <p class="script" data-i18n="only.script">only here</p>
       <h2 class="display" data-i18n="only.h">Only in Busan</h2>
-      <p class="lede" data-i18n="only.p">Two flavors you won't find anywhere else.</p>
+      <p class="lede" data-i18n="only.p">Two seasonal flavors you won't find anywhere else — here only while the season lasts.</p>
     </div>
     <div class="only">
-      <div class="only-card"><span class="emo" aria-hidden="true">🫐</span><h3>Blueberry</h3><p>A bright, fruit-forward glaze over our everyday dough.</p></div>
-      <div class="only-card"><span class="emo" aria-hidden="true">🍠</span><h3>Sweet Potato</h3><p>Roasted sweet potato filling, mellow and lightly sweet.</p></div>
+      <div class="only-card"><span class="emo" aria-hidden="true">🫐</span><span class="season-tag" data-i18n="only.tag">Seasonal menu</span><h3>Blueberry</h3><p>A bright, fruit-forward glaze over our everyday dough.</p></div>
+      <div class="only-card"><span class="emo" aria-hidden="true">🍠</span><span class="season-tag" data-i18n="only.tag">Seasonal menu</span><h3>Sweet Potato</h3><p>Roasted sweet potato filling, mellow and lightly sweet.</p></div>
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" id="route">
     <div class="head">
       <p class="script" data-i18n="route.script">a perfect Gwangalli afternoon</p>
-      <h2 class="display" data-i18n="route.h">Donut, ade, then the beach</h2>
+      <h2 class="display" data-i18n="route.h">Donut, coffee, then the beach</h2>
     </div>
     <div class="route">
       <div class="stop"><span class="dot" aria-hidden="true">🍩</span><h3 data-i18n="route.a1h">Pick your donuts</h3><p data-i18n="route.a1p">Two for you, one to share.</p></div>
-      <div class="stop"><span class="dot" aria-hidden="true">🥤</span><h3 data-i18n="route.a2h">Grab an ade</h3><p data-i18n="route.a2p">House-made fruit syrup, one whole can of soda per cup.</p></div>
+      <div class="stop"><span class="dot" aria-hidden="true">☕</span><h3 data-i18n="route.a2h">Grab our house blend</h3><p data-i18n="route.a2p">A nutty, smooth coffee, blended to pair with our donuts.</p></div>
       <div class="stop"><span class="dot" aria-hidden="true">🏖️</span><h3 data-i18n="route.a3h">Walk to the beach</h3><p data-i18n="route.a3p">Gwangalli is steps away — Gwangan Bridge makes the backdrop.</p></div>
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" id="promise">
     <div class="head">
       <p class="script" data-i18n="promise.script">what we believe</p>
       <h2 class="display" data-i18n="whyus.title">What Makes Our Donuts Different</h2>
@@ -588,7 +591,7 @@
     </ul>
   </section>
 
-  <section class="block">
+  <section class="block" id="story">
     <div class="story">
       <img class="logo-ink" src="bear-logo.png" alt="Black Bear Doughnut logo — a standing black bear" width="394" height="400" loading="lazy">
       <div class="copy">
@@ -623,7 +626,8 @@
 
   <footer>
     <img class="logo-ink" src="bear-logo.png" alt="Black Bear Doughnut" width="394" height="400" loading="lazy">
-    <p>Gwangalli Beach, Busan · Made this morning, sold today only</p>
+    <p class="script motto" data-i18n="footer.motto">A little happiness, made by hand every morning.</p>
+    <p>Black Bear Donut · Gwangalli, Busan · Since 2019</p>
   </footer>
 </div>
 
@@ -663,16 +667,17 @@
       "best.t1":"Torched to order", "best.t2":"Crackly caramel top", "best.t3":"Silky cream",
       "lineup.script":"pick your favorite",
       "lineup.title":"Our Donut Lineup",
-      "lineup.sub":"Swipe to see more. Flavors rotate with the seasons — ask us what's on the shelf today.",
+      "lineup.sub":"Swipe to see more. Flavors rotate with the seasons.",
+      "footer.motto":"A little happiness, made by hand every morning.",
       "chip.all":"All", "chip.fruity":"Fruity", "chip.nutty":"Nutty", "chip.choco":"Chocolate", "chip.tea":"Tea &amp; Matcha",
       "box.script":"can't choose?",
       "box.h":"Try nine in one box",
       "box.p":"Nine mini donuts, nine flavors — made for sharing with your travel crew, or for a hotel-room tasting night.",
-      "only.script":"only here", "only.h":"Only in Busan", "only.p":"Two flavors you won't find anywhere else.",
+      "only.script":"only here", "only.h":"Only in Busan", "only.p":"Two seasonal flavors you won't find anywhere else — here only while the season lasts.", "only.tag":"Seasonal menu",
       "route.script":"a perfect Gwangalli afternoon",
-      "route.h":"Donut, ade, then the beach",
+      "route.h":"Donut, coffee, then the beach",
       "route.a1h":"Pick your donuts", "route.a1p":"Two for you, one to share.",
-      "route.a2h":"Grab an ade", "route.a2p":"House-made fruit syrup, one whole can of soda per cup.",
+      "route.a2h":"Grab our house blend", "route.a2p":"A nutty, smooth coffee, blended to pair with our donuts.",
       "route.a3h":"Walk to the beach", "route.a3p":"Gwangalli is steps away — Gwangan Bridge makes the backdrop.",
       "promise.script":"what we believe",
       "whyus.title":"What Makes Our Donuts Different",
@@ -701,16 +706,17 @@
       "best.t1":"注文後にバーナー", "best.t2":"パリパリのキャラメル", "best.t3":"なめらかクリーム",
       "lineup.script":"お気に入りを見つけて",
       "lineup.title":"ドーナツラインナップ",
-      "lineup.sub":"横にスワイプしてご覧ください。季節ごとにメニューが変わるので、今日のラインナップは店頭でお尋ねください。",
+      "lineup.sub":"横にスワイプしてご覧ください。メニューは季節ごとに変わります。",
+      "footer.motto":"毎朝、手づくりの小さなしあわせを。",
       "chip.all":"すべて", "chip.fruity":"フルーティー", "chip.nutty":"ナッツ", "chip.choco":"チョコ", "chip.tea":"紅茶・抹茶",
       "box.script":"選べないなら",
       "box.h":"ミニサイズ9個を1箱で",
       "box.p":"ミニドーナツ9個、9つの味。旅の仲間とシェアしたり、ホテルで食べ比べしたり。",
-      "only.script":"ここだけ", "only.h":"釜山だけの味", "only.p":"ここでしか出会えない2つの味。",
+      "only.script":"ここだけ", "only.h":"釜山だけの味", "only.p":"ここでしか出会えない、季節限定の2つの味。シーズン中だけの販売です。", "only.tag":"季節限定",
       "route.script":"クァンアンリの午後の過ごし方",
-      "route.h":"ドーナツ、エイド、そしてビーチへ",
+      "route.h":"ドーナツ、コーヒー、そしてビーチへ",
       "route.a1h":"ドーナツを選ぶ", "route.a1p":"自分用に2つ、シェア用に1つ。",
-      "route.a2h":"エイドをテイクアウト", "route.a2p":"自家製フルーツシロップに、1杯につきソーダ1缶。",
+      "route.a2h":"自家ブレンドのコーヒーを", "route.a2p":"ドーナツに合うようにブレンドした、香ばしくてまろやかなオリジナル豆。",
       "route.a3h":"ビーチへ歩いて", "route.a3p":"クァンアンリビーチはすぐそこ。背景には広安大橋。",
       "promise.script":"私たちが大切にしていること",
       "whyus.title":"私たちのドーナツが選ばれる理由",
@@ -739,16 +745,17 @@
       "best.t1":"现点现烤", "best.t2":"酥脆焦糖层", "best.t3":"丝滑奶油",
       "lineup.script":"找到你的最爱",
       "lineup.title":"甜甜圈系列",
-      "lineup.sub":"左右滑动查看更多。口味随季节更换,今天有哪些款式,欢迎到店询问。",
+      "lineup.sub":"左右滑动查看更多。口味随季节更换。",
+      "footer.motto":"每个清晨,亲手做出一点小幸福。",
       "chip.all":"全部", "chip.fruity":"果香", "chip.nutty":"坚果", "chip.choco":"巧克力", "chip.tea":"茶・抹茶",
       "box.script":"选不出来?",
       "box.h":"一盒尝遍九种口味",
       "box.p":"九个迷你甜甜圈、九种口味——适合和旅伴分享,或在酒店里来一场试吃之夜。",
-      "only.script":"仅此一家", "only.h":"釜山限定", "only.p":"别处吃不到的两种口味。",
+      "only.script":"仅此一家", "only.h":"釜山限定", "only.p":"别处吃不到的两款季节限定口味,只在当季供应。", "only.tag":"季节限定",
       "route.script":"完美的广安里午后",
-      "route.h":"甜甜圈、气泡饮,然后去海边",
+      "route.h":"甜甜圈、咖啡,然后去海边",
       "route.a1h":"挑甜甜圈", "route.a1p":"两个自己吃,一个拿来分享。",
-      "route.a2h":"带一杯气泡饮", "route.a2p":"自制果汁糖浆,每杯用一整罐苏打水。",
+      "route.a2h":"来一杯自家拼配咖啡", "route.a2p":"带坚果香、口感顺滑,专为搭配甜甜圈而调配。",
       "route.a3h":"走去海边", "route.a3p":"广安里海滩就在附近,背景就是广安大桥。",
       "promise.script":"我们的坚持",
       "whyus.title":"我们的甜甜圈,与众不同",
@@ -777,16 +784,17 @@
       "best.t1":"Khò lửa khi gọi", "best.t2":"Lớp caramel giòn", "best.t3":"Kem mềm mịn",
       "lineup.script":"Chọn vị bạn thích",
       "lineup.title":"Các loại bánh donut",
-      "lineup.sub":"Vuốt sang để xem thêm. Hương vị thay đổi theo mùa — hãy hỏi chúng tôi hôm nay có những loại nào nhé.",
+      "lineup.sub":"Vuốt sang để xem thêm. Hương vị thay đổi theo mùa.",
+      "footer.motto":"Một chút hạnh phúc, làm bằng tay mỗi sáng.",
       "chip.all":"Tất cả", "chip.fruity":"Vị trái cây", "chip.nutty":"Vị hạt", "chip.choco":"Sô-cô-la", "chip.tea":"Trà &amp; Matcha",
       "box.script":"Không chọn được?",
       "box.h":"Thử chín vị trong một hộp",
       "box.p":"Chín chiếc donut mini, chín hương vị — để chia sẻ cùng bạn đồng hành, hoặc thưởng thức trong khách sạn.",
-      "only.script":"chỉ có ở đây", "only.h":"Chỉ có ở Busan", "only.p":"Hai hương vị bạn không tìm thấy ở nơi nào khác.",
+      "only.script":"chỉ có ở đây", "only.h":"Chỉ có ở Busan", "only.p":"Hai hương vị theo mùa không nơi nào khác có — chỉ bán trong mùa.", "only.tag":"Món theo mùa",
       "route.script":"Một buổi chiều Gwangalli trọn vẹn",
-      "route.h":"Donut, nước ade, rồi ra biển",
+      "route.h":"Donut, cà phê, rồi ra biển",
       "route.a1h":"Chọn donut", "route.a1p":"Hai cái cho bạn, một cái để chia sẻ.",
-      "route.a2h":"Mang theo một ly ade", "route.a2p":"Siro trái cây tự làm, mỗi ly một lon soda.",
+      "route.a2h":"Gọi ly cà phê blend của quán", "route.a2p":"Vị bùi thơm, êm dịu — được phối trộn để hợp nhất với bánh donut.",
       "route.a3h":"Đi bộ ra biển", "route.a3p":"Bãi biển Gwangalli ngay gần đó — cầu Gwangan làm phông nền.",
       "promise.script":"Điều chúng tôi tin",
       "whyus.title":"Điều làm nên sự khác biệt của bánh donut chúng tôi",
@@ -815,16 +823,17 @@
       "best.t1":"Dibakar saat dipesan", "best.t2":"Karamel renyah", "best.t3":"Krim lembut",
       "lineup.script":"Pilih favoritmu",
       "lineup.title":"Pilihan Donat Kami",
-      "lineup.sub":"Geser untuk melihat lainnya. Rasa berganti mengikuti musim — tanyakan kepada kami apa yang tersedia hari ini.",
+      "lineup.sub":"Geser untuk melihat lainnya. Rasa berganti mengikuti musim.",
+      "footer.motto":"Sedikit kebahagiaan, dibuat dengan tangan setiap pagi.",
       "chip.all":"Semua", "chip.fruity":"Buah", "chip.nutty":"Kacang", "chip.choco":"Cokelat", "chip.tea":"Teh &amp; Matcha",
       "box.script":"Bingung memilih?",
       "box.h":"Coba sembilan rasa dalam satu kotak",
       "box.p":"Sembilan donat mini, sembilan rasa — untuk dinikmati bersama teman perjalanan, atau mencicipi semuanya di hotel.",
-      "only.script":"hanya di sini", "only.h":"Hanya di Busan", "only.p":"Dua rasa yang tidak akan Anda temukan di tempat lain.",
+      "only.script":"hanya di sini", "only.h":"Hanya di Busan", "only.p":"Dua rasa musiman yang tidak ada di tempat lain — hanya tersedia selama musimnya.", "only.tag":"Menu musiman",
       "route.script":"Sore sempurna di Gwangalli",
-      "route.h":"Donat, ade, lalu ke pantai",
+      "route.h":"Donat, kopi, lalu ke pantai",
       "route.a1h":"Pilih donat", "route.a1p":"Dua untukmu, satu untuk berbagi.",
-      "route.a2h":"Bawa segelas ade", "route.a2p":"Sirup buah buatan sendiri, satu kaleng soda per gelas.",
+      "route.a2h":"Pesan kopi racikan kami", "route.a2p":"Gurih dan lembut, diracik khusus untuk menemani donat kami.",
       "route.a3h":"Jalan ke pantai", "route.a3p":"Pantai Gwangalli hanya beberapa langkah — Jembatan Gwangan jadi latarnya.",
       "promise.script":"Yang kami yakini",
       "whyus.title":"Yang Membuat Donat Kami Berbeda",
@@ -853,16 +862,17 @@
       "best.t1":"เบิร์นสดตอนสั่ง", "best.t2":"คาราเมลกรอบ", "best.t3":"ครีมเนื้อนุ่ม",
       "lineup.script":"เลือกรสที่ชอบ",
       "lineup.title":"โดนัทของเรา",
-      "lineup.sub":"ปัดเพื่อดูเพิ่มเติม รสชาติเปลี่ยนไปตามฤดูกาล สอบถามเราได้ว่าวันนี้มีอะไรบ้าง",
+      "lineup.sub":"ปัดเพื่อดูเพิ่มเติม รสชาติเปลี่ยนไปตามฤดูกาล",
+      "footer.motto":"ความสุขเล็ก ๆ ทำด้วยมือทุกเช้า",
       "chip.all":"ทั้งหมด", "chip.fruity":"ผลไม้", "chip.nutty":"ถั่ว", "chip.choco":"ช็อกโกแลต", "chip.tea":"ชาและมัทฉะ",
       "box.script":"เลือกไม่ได้ใช่ไหม",
       "box.h":"ลองครบ 9 รสในกล่องเดียว",
       "box.p":"มินิโดนัท 9 ชิ้น 9 รสชาติ แบ่งกันกินกับเพื่อนร่วมทริป หรือชิมทุกรสที่โรงแรม",
-      "only.script":"มีที่นี่ที่เดียว", "only.h":"มีแค่ที่ปูซาน", "only.p":"สองรสชาติที่หาที่อื่นไม่ได้",
+      "only.script":"มีที่นี่ที่เดียว", "only.h":"มีแค่ที่ปูซาน", "only.p":"สองรสชาติตามฤดูกาลที่หาที่อื่นไม่ได้ มีขายเฉพาะช่วงฤดูกาลเท่านั้น", "only.tag":"เมนูตามฤดูกาล",
       "route.script":"บ่ายสบาย ๆ ที่กวางอันรี",
-      "route.h":"โดนัท เอด แล้วไปทะเล",
+      "route.h":"โดนัท กาแฟ แล้วไปทะเล",
       "route.a1h":"เลือกโดนัท", "route.a1p":"สองชิ้นให้ตัวเอง อีกชิ้นไว้แบ่ง",
-      "route.a2h":"หยิบเอดสักแก้ว", "route.a2p":"น้ำเชื่อมผลไม้ทำเอง ใช้โซดาเต็มกระป๋องต่อแก้ว",
+      "route.a2h":"สั่งกาแฟเบลนด์ของร้าน", "route.a2p":"หอมมัน นุ่มละมุน เบลนด์มาให้เข้ากับโดนัทของเราโดยเฉพาะ",
       "route.a3h":"เดินไปทะเล", "route.a3p":"หาดกวางอันรีอยู่ใกล้ ๆ มีสะพานกวางอันเป็นฉากหลัง",
       "promise.script":"สิ่งที่เรายึดมั่น",
       "whyus.title":"จุดเด่นของโดนัทเรา",
