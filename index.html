@@ -317,6 +317,7 @@
     background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 18px;
     display:grid; gap: 6px; align-content:start;
   }
+  .only-img{ width: 100%; height: auto; aspect-ratio: 760 / 1074; object-fit: cover; border-radius: 12px; }
   .only-card .emo{ font-size: 30px; line-height: 1; }
   .only-card h3{ font: 400 22px/1.05 "Anton", "Impact", sans-serif; text-transform: uppercase; letter-spacing: .01em; }
   .only-card p{ color: var(--muted); font-size: 14px; line-height: 1.5; }
@@ -536,6 +537,7 @@
       <button class="chip" type="button" data-filter="nutty" aria-pressed="false"><span aria-hidden="true">🥜</span> <span data-i18n="chip.nutty">Nutty</span></button>
       <button class="chip" type="button" data-filter="choco" aria-pressed="false"><span aria-hidden="true">🍫</span> <span data-i18n="chip.choco">Chocolate</span></button>
       <button class="chip" type="button" data-filter="tea" aria-pressed="false"><span aria-hidden="true">🍵</span> <span data-i18n="chip.tea">Tea &amp; Matcha</span></button>
+      <button class="chip" type="button" data-filter="seasonal" aria-pressed="false"><span aria-hidden="true">🫐</span> <span data-i18n="chip.seasonal">Seasonal menu</span></button>
     </div>
     <div class="track" id="lineupTrack" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Donut lineup">
       <figure class="slide" data-tags="fruity"><img src="lineup-lemon-custard.jpg" alt="Lemon Custard — bright lemon, silky custard" width="760" height="1074"></figure>
@@ -546,6 +548,7 @@
       <figure class="slide" data-tags="nutty"><img src="lineup-peanut-crunky.jpg" alt="Peanut Crunky — nutty richness, delicate crunch" width="760" height="1074" loading="lazy"></figure>
       <figure class="slide" data-tags="tea choco"><img src="lineup-oreo-matcha.jpg" alt="Oreo Matcha — earthy matcha, cookie crunch" width="760" height="1074" loading="lazy"></figure>
       <figure class="slide" data-tags="fruity"><img src="lineup-apple-cinnamon.jpg" alt="Apple Cinnamon — sweet apple, a whisper of cinnamon" width="760" height="1074" loading="lazy"></figure>
+      <figure class="slide" data-tags="seasonal"><img src="blueberry-seasonal.jpg" alt="Blueberry — a sweet blueberry affair. Rich blueberries. A luscious glaze." width="760" height="1074" loading="lazy"></figure>
     </div>
     <div class="car-foot">
       <div class="count" aria-live="polite"><b id="curN">1</b> <span>/ <span id="totN">8</span></span></div>
@@ -574,7 +577,7 @@
       <p class="lede" data-i18n="only.p">Two seasonal flavors you won't find anywhere else — here only while the season lasts.</p>
     </div>
     <div class="only">
-      <div class="only-card"><span class="emo" aria-hidden="true">🫐</span><span class="season-tag" data-i18n="only.tag">Seasonal menu</span><h3>Blueberry</h3><p>A bright, fruit-forward glaze over our everyday dough.</p></div>
+      <div class="only-card"><img class="only-img" src="blueberry-seasonal.jpg" alt="Blueberry — a sweet blueberry affair" width="760" height="1074" loading="lazy"><span class="emo" aria-hidden="true">🫐</span><span class="season-tag" data-i18n="only.tag">Seasonal menu</span><h3>Blueberry</h3><p>A bright, fruit-forward glaze over our everyday dough.</p></div>
       <div class="only-card"><span class="emo" aria-hidden="true">🍠</span><span class="season-tag" data-i18n="only.tag">Seasonal menu</span><h3>Sweet Potato</h3><p>Roasted sweet potato filling, mellow and lightly sweet.</p></div>
     </div>
   </section>
@@ -683,7 +686,7 @@
       "lineup.title":"Our Donut Lineup",
       "lineup.sub":"Swipe to see more. Flavors rotate with the seasons.",
       "footer.motto":"A little happiness, made by hand every morning.",
-      "chip.all":"All", "chip.fruity":"Fruity", "chip.nutty":"Nutty", "chip.choco":"Chocolate", "chip.tea":"Tea &amp; Matcha",
+      "chip.all":"All", "chip.fruity":"Fruity", "chip.nutty":"Nutty", "chip.choco":"Chocolate", "chip.tea":"Tea &amp; Matcha", "chip.seasonal":"Seasonal menu",
       "box.script":"can't choose?",
       "box.h":"Try nine in one box",
       "box.p":"Nine mini donuts, nine flavors — made for sharing with your travel crew, or for a hotel-room tasting night.",
@@ -722,7 +725,7 @@
       "lineup.title":"ドーナツラインナップ",
       "lineup.sub":"横にスワイプしてご覧ください。メニューは季節ごとに変わります。",
       "footer.motto":"毎朝、手づくりの小さなしあわせを。",
-      "chip.all":"すべて", "chip.fruity":"フルーティー", "chip.nutty":"ナッツ", "chip.choco":"チョコ", "chip.tea":"紅茶・抹茶",
+      "chip.all":"すべて", "chip.fruity":"フルーティー", "chip.nutty":"ナッツ", "chip.choco":"チョコ", "chip.tea":"紅茶・抹茶", "chip.seasonal":"季節限定",
       "box.script":"選べないなら",
       "box.h":"ミニサイズ9個を1箱で",
       "box.p":"ミニドーナツ9個、9つの味。旅の仲間とシェアしたり、ホテルで食べ比べしたり。",
@@ -761,7 +764,7 @@
       "lineup.title":"甜甜圈系列",
       "lineup.sub":"左右滑动查看更多。口味随季节更换。",
       "footer.motto":"每个清晨,亲手做出一点小幸福。",
-      "chip.all":"全部", "chip.fruity":"果香", "chip.nutty":"坚果", "chip.choco":"巧克力", "chip.tea":"茶・抹茶",
+      "chip.all":"全部", "chip.fruity":"果香", "chip.nutty":"坚果", "chip.choco":"巧克力", "chip.tea":"茶・抹茶", "chip.seasonal":"季节限定",
       "box.script":"选不出来?",
       "box.h":"一盒尝遍九种口味",
       "box.p":"九个迷你甜甜圈、九种口味——适合和旅伴分享,或在酒店里来一场试吃之夜。",
@@ -800,7 +803,7 @@
       "lineup.title":"Các loại bánh donut",
       "lineup.sub":"Vuốt sang để xem thêm. Hương vị thay đổi theo mùa.",
       "footer.motto":"Một chút hạnh phúc, làm bằng tay mỗi sáng.",
-      "chip.all":"Tất cả", "chip.fruity":"Vị trái cây", "chip.nutty":"Vị hạt", "chip.choco":"Sô-cô-la", "chip.tea":"Trà &amp; Matcha",
+      "chip.all":"Tất cả", "chip.fruity":"Vị trái cây", "chip.nutty":"Vị hạt", "chip.choco":"Sô-cô-la", "chip.tea":"Trà &amp; Matcha", "chip.seasonal":"Theo mùa",
       "box.script":"Không chọn được?",
       "box.h":"Thử chín vị trong một hộp",
       "box.p":"Chín chiếc donut mini, chín hương vị — để chia sẻ cùng bạn đồng hành, hoặc thưởng thức trong khách sạn.",
@@ -839,7 +842,7 @@
       "lineup.title":"Pilihan Donat Kami",
       "lineup.sub":"Geser untuk melihat lainnya. Rasa berganti mengikuti musim.",
       "footer.motto":"Sedikit kebahagiaan, dibuat dengan tangan setiap pagi.",
-      "chip.all":"Semua", "chip.fruity":"Buah", "chip.nutty":"Kacang", "chip.choco":"Cokelat", "chip.tea":"Teh &amp; Matcha",
+      "chip.all":"Semua", "chip.fruity":"Buah", "chip.nutty":"Kacang", "chip.choco":"Cokelat", "chip.tea":"Teh &amp; Matcha", "chip.seasonal":"Musiman",
       "box.script":"Bingung memilih?",
       "box.h":"Coba sembilan rasa dalam satu kotak",
       "box.p":"Sembilan donat mini, sembilan rasa — untuk dinikmati bersama teman perjalanan, atau mencicipi semuanya di hotel.",
@@ -878,7 +881,7 @@
       "lineup.title":"โดนัทของเรา",
       "lineup.sub":"ปัดเพื่อดูเพิ่มเติม รสชาติเปลี่ยนไปตามฤดูกาล",
       "footer.motto":"ความสุขเล็ก ๆ ทำด้วยมือทุกเช้า",
-      "chip.all":"ทั้งหมด", "chip.fruity":"ผลไม้", "chip.nutty":"ถั่ว", "chip.choco":"ช็อกโกแลต", "chip.tea":"ชาและมัทฉะ",
+      "chip.all":"ทั้งหมด", "chip.fruity":"ผลไม้", "chip.nutty":"ถั่ว", "chip.choco":"ช็อกโกแลต", "chip.tea":"ชาและมัทฉะ", "chip.seasonal":"ตามฤดูกาล",
       "box.script":"เลือกไม่ได้ใช่ไหม",
       "box.h":"ลองครบ 9 รสในกล่องเดียว",
       "box.p":"มินิโดนัท 9 ชิ้น 9 รสชาติ แบ่งกันกินกับเพื่อนร่วมทริป หรือชิมทุกรสที่โรงแรม",
