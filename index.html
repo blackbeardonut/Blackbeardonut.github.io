@@ -317,6 +317,8 @@
     background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 18px;
     display:grid; gap: 6px; align-content:start;
   }
+  .only-link{ justify-self:start; font-size:14px; font-weight:700; color:var(--accent); text-decoration:none; padding-block:4px; }
+  .only-link:hover{ text-decoration:underline; }
   .only-img{ width: 100%; height: auto; aspect-ratio: 760 / 1074; object-fit: cover; border-radius: 12px; }
   .only-card .emo{ font-size: 30px; line-height: 1; }
   .only-card h3{ font: 400 22px/1.05 "Anton", "Impact", sans-serif; text-transform: uppercase; letter-spacing: .01em; }
@@ -577,7 +579,7 @@
       <p class="lede" data-i18n="only.p">Two seasonal flavors you won't find anywhere else — here only while the season lasts.</p>
     </div>
     <div class="only">
-      <div class="only-card"><img class="only-img" src="blueberry-seasonal.jpg" alt="Blueberry — a sweet blueberry affair" width="760" height="1074" loading="lazy"><span class="emo" aria-hidden="true">🫐</span><span class="season-tag" data-i18n="only.tag">Seasonal menu</span><h3>Blueberry</h3><p>A bright, fruit-forward glaze over our everyday dough.</p></div>
+      <div class="only-card"><img class="only-img" src="blueberry-seasonal.jpg" alt="Blueberry — a sweet blueberry affair" width="760" height="1074" loading="lazy"><span class="emo" aria-hidden="true">🫐</span><span class="season-tag" data-i18n="only.tag">Seasonal menu</span><h3>Blueberry</h3><p>A bright, fruit-forward glaze over our everyday dough.</p><a class="only-link" href="blueberry.html">See how it's made →</a></div>
       <div class="only-card"><span class="emo" aria-hidden="true">🍠</span><span class="season-tag" data-i18n="only.tag">Seasonal menu</span><h3>Sweet Potato</h3><p>Roasted sweet potato filling, mellow and lightly sweet.</p></div>
     </div>
   </section>
