@@ -165,9 +165,11 @@
   dialog.pop[open]{ animation:rise .22s ease-out; }
   @keyframes rise{ from{ transform:translateY(24px); opacity:0; } to{ transform:none; opacity:1; } }
   @media (prefers-reduced-motion: reduce){ dialog.pop[open]{ animation:none; } }
-  .zoom{ position:relative; overflow:hidden; aspect-ratio:4/3; background-color:var(--surface-2); background-repeat:no-repeat; background-size:260%; }
-  .zoom::after{ content:""; position:absolute; left:var(--px); top:var(--py); width:64px; height:64px; transform:translate(-50%,-50%);
-    border-radius:50%; border:2.5px solid rgba(255,255,255,.95); box-shadow:0 0 0 999px rgba(0,0,0,.12); }
+  .zoom{ position:relative; background:var(--surface-2); display:grid; place-items:center; padding:14px 14px 0; }
+  .zoom-frame{ position:relative; overflow:hidden; border-radius:14px; line-height:0; }
+  .zoom-frame img{ display:block; width:auto; height:auto; max-width:100%; max-height:min(50dvh, 520px); }
+  .zoom-frame::after{ content:""; position:absolute; left:var(--px); top:var(--py); width:52px; height:52px; transform:translate(-50%,-50%);
+    border-radius:50%; border:3px solid #fff; box-shadow:0 0 0 999px rgba(0,0,0,.28), 0 2px 10px rgba(0,0,0,.4); }
   .x{ position:absolute; top:12px; right:12px; width:40px; height:40px; border-radius:50%; border:0; cursor:pointer;
     background:rgba(255,255,255,.92); color:#3B1E10; font-size:20px; line-height:1; display:grid; place-items:center; z-index:2; }
   .pop-body{ padding:20px 22px 22px; display:grid; gap:10px; }
@@ -312,7 +314,8 @@
 </div>
 
 <dialog class="pop" id="pop" aria-labelledby="popTitle">
-  <div class="zoom" id="popZoom" role="img" aria-label="">
+  <div class="zoom" id="popZoom">
+    <div class="zoom-frame" id="popFrame"><img id="popImg" src="" alt="" width="900" height="1200"></div>
     <button class="x" type="button" id="popClose" aria-label="Close">✕</button>
   </div>
   <div class="pop-body">
@@ -344,11 +347,12 @@
     var s = spots[cur];
     var img = s.parentElement.querySelector('img');
     var x = s.style.getPropertyValue('--x'), y = s.style.getPropertyValue('--y');
-    zoom.style.backgroundImage = 'url("' + img.getAttribute('src') + '")';
-    zoom.style.backgroundPosition = x + ' ' + y;
-    zoom.style.setProperty('--px', x);
-    zoom.style.setProperty('--py', y);
-    zoom.setAttribute('aria-label', img.getAttribute('alt'));
+    var pimg = document.getElementById('popImg');
+    pimg.src = img.getAttribute('src');
+    pimg.alt = img.getAttribute('alt');
+    var frame = document.getElementById('popFrame');
+    frame.style.setProperty('--px', x);
+    frame.style.setProperty('--py', y);
     document.getElementById('popStep').textContent = s.dataset.step;
     document.getElementById('popTitle').textContent = s.dataset.title;
     document.getElementById('popText').textContent = s.dataset.text;
