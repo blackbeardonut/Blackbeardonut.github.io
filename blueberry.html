@@ -52,22 +52,29 @@
   @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
   body{
     background:var(--bg); color:var(--text);
-    font-family:"Outfit", -apple-system, "Segoe UI", sans-serif; font-size:16px;
+    font-family:"Outfit", -apple-system, "Segoe UI", "Hiragino Sans", "PingFang SC", "Noto Sans Thai", sans-serif; font-size:16px;
     padding-inline:20px;
     padding-block:0 calc(96px + env(safe-area-inset-bottom, 0px));
     -webkit-font-smoothing:antialiased; overflow-x:clip;
   }
   h1,h2,h3,p{ margin:0; }
   a{ color:inherit; }
-  img, video{ max-width:100%; display:block; }
-  button{ font:inherit; }
+  img, video{ max-width:100%; height:auto; display:block; }
+  button, select{ font:inherit; }
   .wrap{ max-width:720px; margin-inline:auto; }
   :focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:6px; }
 
   .script{ font-family:"Pinyon Script", "Snell Roundhand", cursive; font-size:30px; line-height:1; color:var(--accent); }
-  .display{ font-family:"Anton", "Impact", sans-serif; font-weight:400; text-transform:uppercase; letter-spacing:.005em; line-height:.92; text-wrap:balance; }
+  .display{ font-family:"Anton", "Impact", "Hiragino Sans", "PingFang SC", sans-serif; font-weight:400; text-transform:uppercase; letter-spacing:.005em; line-height:.92; text-wrap:balance; }
   h2.display{ font-size:clamp(34px, 9vw, 52px); }
   .lede{ color:var(--muted); font-size:16px; line-height:1.6; max-width:52ch; }
+  html:is(:lang(ja), :lang(zh), :lang(th)) .script{
+    font-family:"Outfit", "Hiragino Sans", "PingFang SC", sans-serif; font-size:15px; font-weight:600; letter-spacing:.06em;
+  }
+  html:is(:lang(ja), :lang(zh), :lang(th)) .display{ font-weight:800; line-height:1.08; letter-spacing:0; }
+  html:is(:lang(ja), :lang(zh), :lang(th)) h2.display{ font-size:clamp(28px, 7.5vw, 42px); }
+  html:is(:lang(ja), :lang(zh), :lang(th)) .hero h1{ font-size:clamp(48px, 14vw, 84px); }
+  html:is(:lang(vi), :lang(id)) .hero h1{ font-size:clamp(56px, 17vw, 110px); }
 
   .btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px; font-weight:600; font-size:15px;
     padding:13px 20px; border-radius:999px; border:1.5px solid transparent; text-decoration:none; white-space:nowrap; cursor:pointer;
@@ -82,17 +89,21 @@
     padding-block:12px; background:color-mix(in srgb, var(--bg) 86%, transparent); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); }
   .brand{ display:flex; align-items:center; gap:9px; text-decoration:none; font-family:"Anton", "Impact", sans-serif; font-size:19px; letter-spacing:.02em; text-transform:uppercase; }
   .brand img{ height:30px; width:auto; }
-  .back{ font-size:14px; font-weight:600; color:var(--muted); text-decoration:none; display:inline-flex; align-items:center; gap:6px; padding:8px 4px; }
+  .top-actions{ display:flex; gap:10px; align-items:center; }
+  .back{ font-size:14px; font-weight:600; color:var(--muted); text-decoration:none; padding:8px 4px; white-space:nowrap; }
   .back:hover{ color:var(--text); }
+  @media (max-width:560px){ .back{ display:none; } }
+  .lang-select{ font:600 13px "Outfit", sans-serif; color:var(--text); background:var(--surface);
+    border:1px solid var(--line); border-radius:999px; padding:8px 10px; }
 
   /* hero */
-  .hero{ padding-block:20px 34px; display:grid; gap:14px; text-align:center; justify-items:center; }
+  .hero{ padding-block:20px 34px; display:grid; grid-template-columns:minmax(0, 1fr); gap:14px; text-align:center; justify-items:center; }
   .hero h1{ font-size:clamp(64px, 20vw, 120px); color:var(--berry); }
   .tag{ display:inline-flex; align-items:center; gap:6px; background:var(--berry-soft); color:var(--berry);
     font-size:13px; font-weight:700; letter-spacing:.04em; padding:6px 12px; border-radius:999px; }
   .hero-img{ width:min(100%, 420px); border-radius:999px 999px 28px 28px; overflow:hidden; box-shadow:var(--shadow); margin-top:6px; background:var(--surface-2); }
   .hero-img img{ width:100%; height:auto; }
-  .hint{ display:inline-flex; align-items:center; gap:8px; font-size:14px; color:var(--muted); }
+  .hint{ display:inline-flex; align-items:center; gap:8px; font-size:14px; color:var(--muted); text-align:left; }
   .hint .mini-dot{ width:22px; height:22px; border-radius:50%; background:var(--berry); color:var(--on-berry);
     font:700 12px/22px "Outfit", sans-serif; text-align:center; flex:none; }
 
@@ -138,12 +149,13 @@
   .film-box{ border-radius:22px; overflow:hidden; background:#000; box-shadow:var(--shadow); width:min(100%, 380px); margin-inline:auto; }
   .film-box video{ width:100%; height:auto; aspect-ratio:9/16; object-fit:cover; }
   .film p{ font-size:14px; color:var(--muted); line-height:1.5; text-align:center; max-width:46ch; margin-inline:auto; }
-  .film h3{ font:400 22px/1.05 "Anton", "Impact", sans-serif; text-transform:uppercase; text-align:center; }
+  .film h3{ font:400 22px/1.05 "Anton", "Impact", "Hiragino Sans", "PingFang SC", sans-serif; text-transform:uppercase; text-align:center; }
+  html:is(:lang(ja), :lang(zh), :lang(th)) .film h3{ font-weight:800; }
 
   /* finale */
   .finale{ margin-top:52px; padding:26px 22px 28px; border-radius:28px; background:var(--surface); border:1px solid var(--line);
-    display:grid; gap:16px; text-align:center; justify-items:center; }
-  .finale img{ width:min(100%, 360px); border-radius:20px; }
+    display:grid; grid-template-columns:minmax(0, 1fr); gap:16px; text-align:center; justify-items:center; }
+  .finale img{ width:min(100%, 360px); height:auto; border-radius:20px; }
   .finale .actions{ display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
 
   footer{ text-align:center; color:var(--muted); font-size:13px; padding-block:40px 10px; line-height:1.6; }
@@ -153,7 +165,7 @@
     padding:12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
     background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
     border-top:1px solid var(--line); }
-  .dock .btn{ flex:1; max-width:240px; }
+  .dock .btn{ flex:1; max-width:240px; min-width:0; }
 
   /* popup */
   dialog.pop{ border:0; padding:0; width:min(560px, 100vw); max-width:100vw; max-height:92dvh; border-radius:26px;
@@ -174,7 +186,8 @@
     background:rgba(255,255,255,.92); color:#3B1E10; font-size:20px; line-height:1; display:grid; place-items:center; z-index:2; }
   .pop-body{ padding:20px 22px 22px; display:grid; gap:10px; }
   .pop-step{ justify-self:start; }
-  .pop-body h3{ font:400 28px/1 "Anton", "Impact", sans-serif; text-transform:uppercase; }
+  .pop-body h3{ font:400 28px/1.05 "Anton", "Impact", "Hiragino Sans", "PingFang SC", sans-serif; text-transform:uppercase; }
+  html:is(:lang(ja), :lang(zh), :lang(th)) .pop-body h3{ font-weight:800; font-size:24px; line-height:1.2; }
   .pop-body p{ color:var(--muted); line-height:1.6; }
   .pop-nav{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:8px; padding-top:14px; border-top:1px solid var(--line); }
   .pop-nav .btn{ padding:10px 16px; font-size:14px; }
@@ -196,125 +209,136 @@
       <img class="logo-ink" src="bear-mark.png" alt="" width="125" height="280">
       Black Bear Donut
     </a>
-    <a class="back" href="./#seasonal">← All donuts</a>
+    <div class="top-actions">
+      <a class="back" href="./#seasonal" data-i18n="nav.back">← All donuts</a>
+      <select id="langSelect" class="lang-select" aria-label="Language">
+        <option value="en">EN</option>
+        <option value="ja">日本語</option>
+        <option value="zh">中文</option>
+        <option value="vi">Tiếng Việt</option>
+        <option value="id">Indonesia</option>
+        <option value="th">ภาษาไทย</option>
+      </select>
+    </div>
   </header>
 
   <section class="hero">
-    <p class="script">a sweet blueberry affair</p>
-    <h1 class="display">Blueberry</h1>
-    <span class="tag"><span aria-hidden="true">🫐</span> Seasonal · Only in Busan</span>
+    <p class="script" data-i18n="hero.script">a sweet blueberry affair</p>
+    <h1 class="display" data-i18n="hero.h1">Blueberry</h1>
+    <span class="tag"><span aria-hidden="true">🫐</span> <span data-i18n="hero.tag">Seasonal · Only in Busan</span></span>
     <div class="hero-img"><img src="blueberry-seasonal.jpg" alt="Blueberry donut poster — rich blueberries, a luscious glaze" width="760" height="1075"></div>
-    <p class="lede">One donut, four steps, one morning. Here's how our blueberry donut comes together, from a bowl of berries to a glossy purple glaze.</p>
-    <p class="hint"><span class="mini-dot" aria-hidden="true">1</span> Tap the numbered dots on each photo to look closer.</p>
+    <p class="lede" data-i18n="hero.lede">One donut, four steps, one morning. Here's how our blueberry donut comes together, from a bowl of berries to a glossy purple glaze.</p>
+    <p class="hint"><span class="mini-dot" aria-hidden="true">1</span> <span data-i18n="hero.hint">Tap the numbered dots on each photo to look closer.</span></p>
   </section>
 
   <nav class="steps-nav" aria-label="Steps">
-    <a href="#berries"><b>01</b>Berries</a>
-    <a href="#jam"><b>02</b>Jam</a>
-    <a href="#dough"><b>03</b>Dough</a>
-    <a href="#glaze"><b>04</b>Glaze</a>
+    <a href="#berries"><b>01</b><span data-i18n="nav.s1">Berries</span></a>
+    <a href="#jam"><b>02</b><span data-i18n="nav.s2">Jam</span></a>
+    <a href="#dough"><b>03</b><span data-i18n="nav.s3">Dough</span></a>
+    <a href="#glaze"><b>04</b><span data-i18n="nav.s4">Glaze</span></a>
   </nav>
 
   <!-- 01 -->
   <section class="step" id="berries">
     <div class="step-head">
-      <span class="step-no">STEP 01</span>
-      <p class="script">it starts with fruit</p>
-      <h2 class="display">Real berries, by the bowlful</h2>
-      <p class="lede">Our blueberry donut starts long before the fryer, with a bowl of whole blueberries on the scale.</p>
+      <span class="step-no"><span data-i18n="step">STEP</span> 01</span>
+      <p class="script" data-i18n="s1.script">it starts with fruit</p>
+      <h2 class="display" data-i18n="s1.h">Real berries, by the bowlful</h2>
+      <p class="lede" data-i18n="s1.p">Our blueberry donut starts long before the fryer, with a bowl of whole blueberries on the scale.</p>
     </div>
     <figure class="hot">
       <img src="bb-berries.jpg" alt="A bowl of whole blueberries on a kitchen scale" width="900" height="1200" loading="lazy">
-      <button class="spot" type="button" style="--x:34%;--y:42%" data-step="Step 01 · Berries" data-title="Whole blueberries" data-text="Every batch begins with whole berries. Look closely and you can see the skins and the little crown on top of each one.">1</button>
-      <button class="spot" type="button" style="--x:66%;--y:83%" data-step="Step 01 · Berries" data-title="Weighed every time" data-text="Each batch goes on the scale before it goes in the pot, so the jam comes out the same, morning after morning.">2</button>
+      <button class="spot" type="button" style="--x:34%;--y:42%" data-s="1">1</button>
+      <button class="spot" type="button" style="--x:66%;--y:83%" data-s="1">2</button>
     </figure>
   </section>
 
   <!-- 02 -->
   <section class="step" id="jam">
     <div class="step-head">
-      <span class="step-no">STEP 02</span>
-      <p class="script">slow and steady</p>
-      <h2 class="display">Cooked down into jam</h2>
-      <p class="lede">Berries and sugar go into the cooker together and are stirred as they heat, until the fruit breaks down into a thick, deep-purple jam.</p>
+      <span class="step-no"><span data-i18n="step">STEP</span> 02</span>
+      <p class="script" data-i18n="s2.script">slow and steady</p>
+      <h2 class="display" data-i18n="s2.h">Cooked down into jam</h2>
+      <p class="lede" data-i18n="s2.p">Berries and sugar go into the cooker together and are stirred as they heat, until the fruit breaks down into a thick, deep-purple jam.</p>
     </div>
     <figure class="hot">
       <img src="bb-jam-cook.jpg" alt="Blueberries and sugar cooking in a stirring cooker" width="900" height="1200" loading="lazy">
-      <button class="spot" type="button" style="--x:78%;--y:52%" data-step="Step 02 · Jam" data-title="Berries meet sugar" data-text="The sugar goes straight onto the berries. As everything warms up, it melts into the juice.">3</button>
-      <button class="spot" type="button" style="--x:22%;--y:40%" data-step="Step 02 · Jam" data-title="Always stirring" data-text="A stirring arm keeps everything moving, so the jam cooks evenly and nothing catches on the bottom.">4</button>
-      <button class="spot" type="button" style="--x:42%;--y:62%" data-step="Step 02 · Jam" data-title="The juice comes out" data-text="As the berries heat up, their skins burst and release juice. That's where the deep purple starts.">5</button>
+      <button class="spot" type="button" style="--x:78%;--y:52%" data-s="2">3</button>
+      <button class="spot" type="button" style="--x:22%;--y:40%" data-s="2">4</button>
+      <button class="spot" type="button" style="--x:42%;--y:62%" data-s="2">5</button>
     </figure>
   </section>
 
   <!-- 03 -->
   <section class="step" id="dough">
     <div class="step-head">
-      <span class="step-no">STEP 03</span>
-      <p class="script">our everyday dough</p>
-      <h2 class="display">Fried, then checked by hand</h2>
-      <p class="lede">The blueberry donut is built on the same dough as the rest of our lineup, mixed, cut and fried by hand every morning.</p>
+      <span class="step-no"><span data-i18n="step">STEP</span> 03</span>
+      <p class="script" data-i18n="s3.script">our everyday dough</p>
+      <h2 class="display" data-i18n="s3.h">Fried, then checked by hand</h2>
+      <p class="lede" data-i18n="s3.p">The blueberry donut is built on the same dough as the rest of our lineup, mixed, cut and fried by hand every morning.</p>
     </div>
     <div class="figs two">
       <figure class="hot">
         <img src="bb-dough-tray.jpg" alt="Freshly fried donuts being lined up on trays by gloved hands" width="900" height="1200" loading="lazy">
-        <button class="spot" type="button" style="--x:42%;--y:65%" data-step="Step 03 · Dough" data-title="The pale ring" data-text="See the light band around the middle? A well-risen donut floats in the oil, so that strip never touches the heat. It's the mark of dough that was given enough time to proof.">6</button>
-        <button class="spot" type="button" style="--x:82%;--y:43%" data-step="Step 03 · Dough" data-title="Tray by tray" data-text="Fresh out of the fryer, the donuts are lined up on trays by hand, in gloves.">7</button>
+        <button class="spot" type="button" style="--x:42%;--y:65%" data-s="3">6</button>
+        <button class="spot" type="button" style="--x:82%;--y:43%" data-s="3">7</button>
       </figure>
       <figure class="hot">
         <img src="bb-dough-check.jpg" alt="A gloved hand checking a fried donut on a perforated cooling tray" width="900" height="1200" loading="lazy">
-        <button class="spot" type="button" style="--x:47%;--y:76%" data-step="Step 03 · Dough" data-title="Room to breathe" data-text="They cool on a perforated tray, so steam escapes from underneath instead of making the bottom soggy.">8</button>
-        <button class="spot" type="button" style="--x:74%;--y:40%" data-step="Step 03 · Dough" data-title="One at a time" data-text="Each donut is picked up and checked by hand before it moves on to the glaze.">9</button>
+        <button class="spot" type="button" style="--x:47%;--y:76%" data-s="3">8</button>
+        <button class="spot" type="button" style="--x:74%;--y:40%" data-s="3">9</button>
       </figure>
     </div>
     <div class="film">
-      <h3>A morning in our kitchen</h3>
+      <h3 data-i18n="film.h">A morning in our kitchen</h3>
       <div class="film-box">
         <video src="bb-process.mp4" poster="bb-process-poster.jpg" controls muted playsinline preload="metadata" width="720" height="1280" aria-label="16-second video of our everyday donut making: dough, frying, glazing"></video>
       </div>
-      <p>16 seconds of our everyday donut making: dough, fryer, glaze. It's not the blueberry batch, but it's the same hands and the same dough.</p>
+      <p data-i18n="film.p">16 seconds of our everyday donut making: dough, fryer, glaze. It's not the blueberry batch, but it's the same hands and the same dough.</p>
     </div>
   </section>
 
   <!-- 04 -->
   <section class="step" id="glaze">
     <div class="step-head">
-      <span class="step-no">STEP 04</span>
-      <p class="script">the finishing touch</p>
-      <h2 class="display">A glossy blueberry glaze</h2>
-      <p class="lede">Last step: each donut gets its blueberry glaze and is left on the tray to set.</p>
+      <span class="step-no"><span data-i18n="step">STEP</span> 04</span>
+      <p class="script" data-i18n="s4.script">the finishing touch</p>
+      <h2 class="display" data-i18n="s4.h">A glossy blueberry glaze</h2>
+      <p class="lede" data-i18n="s4.p">Last step: each donut gets its blueberry glaze and is left on the tray to set.</p>
     </div>
     <figure class="hot">
       <img src="bb-tray.jpg" alt="A tray of donuts with glossy blueberry glaze" width="900" height="1200" loading="lazy">
-      <button class="spot" type="button" style="--x:52%;--y:43%" data-step="Step 04 · Glaze" data-title="Real fruit specks" data-text="Look closely at the glaze. Those tiny dark specks are bits of blueberry.">10</button>
-      <button class="spot" type="button" style="--x:35%;--y:67%" data-step="Step 04 · Glaze" data-title="Every drip is different" data-text="Glazed by hand, so no two donuts drip in quite the same way.">11</button>
-      <button class="spot" type="button" style="--x:44%;--y:17%" data-step="Step 04 · Glaze" data-title="Blueberry on the side, too" data-text="Peek at the side of the donut. You'll spot blueberry there as well.">12</button>
+      <button class="spot" type="button" style="--x:52%;--y:43%" data-s="4">10</button>
+      <button class="spot" type="button" style="--x:35%;--y:67%" data-s="4">11</button>
+      <button class="spot" type="button" style="--x:44%;--y:17%" data-s="4">12</button>
     </figure>
   </section>
 
   <section class="finale">
-    <p class="script">see you in Gwangalli</p>
-    <h2 class="display">Made this morning.<br>Gone by evening.</h2>
+    <p class="script" data-i18n="fin.script">see you in Gwangalli</p>
+    <h2 class="display" data-i18n="fin.h">Made this morning.<br>Gone by evening.</h2>
     <img src="bb-finished.jpg" alt="A single finished blueberry donut" width="900" height="1200" loading="lazy">
-    <p class="lede">Blueberry is a seasonal flavor you'll only find at our Gwangalli shop. Like everything we make, it's sold today only, so come early.</p>
+    <p class="lede" data-i18n="fin.p">Blueberry is a seasonal flavor you'll only find at our Gwangalli shop. Like everything we make, it's sold today only, so come early.</p>
     <div class="actions">
-      <a class="btn btn-primary" href="https://maps.app.goo.gl/g9EJB3ZToqhamKCu8" target="_blank" rel="noopener"><span aria-hidden="true">📍</span> Get Directions</a>
-      <a class="btn btn-line" href="./#lineup">See the full lineup</a>
+      <a class="btn btn-primary" href="https://maps.app.goo.gl/g9EJB3ZToqhamKCu8" target="_blank" rel="noopener"><span aria-hidden="true">📍</span> <span data-i18n="dir">Get Directions</span></a>
+      <a class="btn btn-line" href="./#lineup" data-i18n="fin.lineup">See the full lineup</a>
     </div>
   </section>
 
   <footer>
     Black Bear Donut · Gwangalli, Busan · Since 2019<br>
-    12, Gwanganhaebyeon-ro 255beon-gil, Suyeong-gu, Busan
+    12, Gwanganhaebyeon-ro 255beon-gil, Suyeong-gu, Busan<br>
+    부산광역시 수영구 광안해변로255번길 12
   </footer>
 </div>
 
 <div class="dock">
-  <a class="btn btn-primary" href="https://maps.app.goo.gl/g9EJB3ZToqhamKCu8" target="_blank" rel="noopener"><span aria-hidden="true">📍</span> Get Directions</a>
-  <a class="btn btn-line" href="./">All donuts</a>
+  <a class="btn btn-primary" href="https://maps.app.goo.gl/g9EJB3ZToqhamKCu8" target="_blank" rel="noopener"><span aria-hidden="true">📍</span> <span data-i18n="dir">Get Directions</span></a>
+  <a class="btn btn-line" href="./" data-i18n="dock.all">All donuts</a>
 </div>
 
 <dialog class="pop" id="pop" aria-labelledby="popTitle">
-  <div class="zoom" id="popZoom">
+  <div class="zoom">
     <div class="zoom-frame" id="popFrame"><img id="popImg" src="" alt="" width="900" height="1200"></div>
     <button class="x" type="button" id="popClose" aria-label="Close">✕</button>
   </div>
@@ -323,44 +347,264 @@
     <h3 id="popTitle"></h3>
     <p id="popText"></p>
     <div class="pop-nav">
-      <button class="btn btn-line" type="button" id="popPrev">← Prev</button>
+      <button class="btn btn-line" type="button" id="popPrev"></button>
       <span class="count" id="popCount"></span>
-      <button class="btn btn-primary" type="button" id="popNext">Next →</button>
+      <button class="btn btn-primary" type="button" id="popNext"></button>
     </div>
   </div>
 </dialog>
 
 <script>
 (function(){
+  var I18N = {
+    en: {
+      "nav.back":"← All donuts", "dir":"Get Directions", "dock.all":"All donuts",
+      "hero.script":"a sweet blueberry affair", "hero.h1":"Blueberry", "hero.tag":"Seasonal · Only in Busan",
+      "hero.lede":"One donut, four steps, one morning. Here's how our blueberry donut comes together, from a bowl of berries to a glossy purple glaze.",
+      "hero.hint":"Tap the numbered dots on each photo to look closer.",
+      "nav.s1":"Berries", "nav.s2":"Jam", "nav.s3":"Dough", "nav.s4":"Glaze", "step":"STEP",
+      "s1.script":"it starts with fruit", "s1.h":"Real berries, by the bowlful",
+      "s1.p":"Our blueberry donut starts long before the fryer, with a bowl of whole blueberries on the scale.",
+      "s2.script":"slow and steady", "s2.h":"Cooked down into jam",
+      "s2.p":"Berries and sugar go into the cooker together and are stirred as they heat, until the fruit breaks down into a thick, deep-purple jam.",
+      "s3.script":"our everyday dough", "s3.h":"Fried, then checked by hand",
+      "s3.p":"The blueberry donut is built on the same dough as the rest of our lineup, mixed, cut and fried by hand every morning.",
+      "s4.script":"the finishing touch", "s4.h":"A glossy blueberry glaze",
+      "s4.p":"Last step: each donut gets its blueberry glaze and is left on the tray to set.",
+      "film.h":"A morning in our kitchen",
+      "film.p":"16 seconds of our everyday donut making: dough, fryer, glaze. It's not the blueberry batch, but it's the same hands and the same dough.",
+      "fin.script":"see you in Gwangalli", "fin.h":"Made this morning.<br>Gone by evening.",
+      "fin.p":"Blueberry is a seasonal flavor you'll only find at our Gwangalli shop. Like everything we make, it's sold today only, so come early.",
+      "fin.lineup":"See the full lineup",
+      "pop.prev":"← Prev", "pop.next":"Next →", "pop.first":"Back to 1 →", "pop.close":"Close",
+      "sp1.t":"Whole blueberries", "sp1.p":"Every batch begins with whole berries. Look closely and you can see the skins and the little crown on top of each one.",
+      "sp2.t":"Weighed every time", "sp2.p":"Each batch goes on the scale before it goes in the pot, so the jam comes out the same, morning after morning.",
+      "sp3.t":"Berries meet sugar", "sp3.p":"The sugar goes straight onto the berries. As everything warms up, it melts into the juice.",
+      "sp4.t":"Always stirring", "sp4.p":"A stirring arm keeps everything moving, so the jam cooks evenly and nothing catches on the bottom.",
+      "sp5.t":"The juice comes out", "sp5.p":"As the berries heat up, their skins burst and release juice. That's where the deep purple starts.",
+      "sp6.t":"The pale ring", "sp6.p":"See the light band around the middle? A well-risen donut floats in the oil, so that strip never touches the heat. It's the mark of dough that was given enough time to proof.",
+      "sp7.t":"Tray by tray", "sp7.p":"Fresh out of the fryer, the donuts are lined up on trays by hand, in gloves.",
+      "sp8.t":"Room to breathe", "sp8.p":"They cool on a perforated tray, so steam escapes from underneath instead of making the bottom soggy.",
+      "sp9.t":"One at a time", "sp9.p":"Each donut is picked up and checked by hand before it moves on to the glaze.",
+      "sp10.t":"Real fruit specks", "sp10.p":"Look closely at the glaze. Those tiny dark specks are bits of blueberry.",
+      "sp11.t":"Every drip is different", "sp11.p":"Glazed by hand, so no two donuts drip in quite the same way.",
+      "sp12.t":"Blueberry on the side, too", "sp12.p":"Peek at the side of the donut. You'll spot blueberry there as well."
+    },
+    ja: {
+      "nav.back":"← すべてのドーナツ", "dir":"道順を見る", "dock.all":"すべてのドーナツ",
+      "hero.script":"甘いブルーベリーの物語", "hero.h1":"ブルーベリー", "hero.tag":"季節限定 · 釜山だけの味",
+      "hero.lede":"ひとつのドーナツ、4つのステップ、ひと朝の仕事。ボウルいっぱいのベリーが、つややかな紫のグレーズになるまでをご紹介します。",
+      "hero.hint":"写真の番号をタップすると、くわしく見られます。",
+      "nav.s1":"ベリー", "nav.s2":"ジャム", "nav.s3":"生地", "nav.s4":"グレーズ", "step":"STEP",
+      "s1.script":"はじまりは果実から", "s1.h":"ボウルいっぱいの本物のベリー",
+      "s1.p":"ブルーベリードーナツは、フライヤーよりずっと前、はかりに載せたボウルいっぱいのブルーベリーから始まります。",
+      "s2.script":"ゆっくり、じっくり", "s2.h":"煮詰めてジャムに",
+      "s2.p":"ベリーと砂糖を一緒に鍋に入れ、混ぜながら加熱。果実がくずれて、濃い紫のとろりとしたジャムになるまで煮詰めます。",
+      "s3.script":"いつもの生地", "s3.h":"揚げたら、手で確かめる",
+      "s3.p":"ブルーベリードーナツの生地は、ほかのラインナップと同じ。毎朝、手でこねて、型を抜き、揚げています。",
+      "s4.script":"仕上げのひと手間", "s4.h":"つややかなブルーベリーグレーズ",
+      "s4.p":"最後に、ひとつずつブルーベリーグレーズをかけ、トレーの上で固まるのを待ちます。",
+      "film.h":"わたしたちのキッチンの朝",
+      "film.p":"いつものドーナツづくりの16秒:生地、フライヤー、グレーズ。ブルーベリーの回ではありませんが、同じ手、同じ生地です。",
+      "fin.script":"クァンアンリでお待ちしています", "fin.h":"朝につくって、<br>夕方には売り切れ。",
+      "fin.p":"ブルーベリーは、クァンアンリのお店でしか出会えない季節限定の味。ほかの商品と同じく販売は今日だけなので、お早めにどうぞ。",
+      "fin.lineup":"ラインナップを見る",
+      "pop.prev":"← 前へ", "pop.next":"次へ →", "pop.first":"1に戻る →", "pop.close":"閉じる",
+      "sp1.t":"丸ごとのブルーベリー", "sp1.p":"毎回、丸ごとのベリーから始めます。よく見ると、ひと粒ずつの皮と、てっぺんの小さな王冠が見えます。",
+      "sp2.t":"毎回きちんと計量", "sp2.p":"鍋に入れる前に、必ずはかりに載せます。だから毎朝、同じ味のジャムができあがります。",
+      "sp3.t":"ベリーと砂糖", "sp3.p":"砂糖はベリーに直接のせます。温まるにつれて、果汁に溶けていきます。",
+      "sp4.t":"ずっと混ぜ続ける", "sp4.p":"かき混ぜるアームが休まず動くので、ジャムはむらなく煮え、底が焦げつきません。",
+      "sp5.t":"果汁があふれ出す", "sp5.p":"温まると皮がはじけて果汁があふれ出します。あの深い紫色は、ここから始まります。",
+      "sp6.t":"白いライン", "sp6.p":"真ん中の明るい帯が見えますか?よく膨らんだドーナツは油に浮くので、この部分は熱に触れません。生地を十分に発酵させたしるしです。",
+      "sp7.t":"トレーごとに", "sp7.p":"揚げたてのドーナツを、手袋をした手でトレーに並べていきます。",
+      "sp8.t":"蒸気を逃がす", "sp8.p":"穴のあいたトレーで冷ますので、蒸気が下から抜け、底がべたつきません。",
+      "sp9.t":"ひとつずつ", "sp9.p":"グレーズに進む前に、ひとつずつ手に取って確かめます。",
+      "sp10.t":"本物の果実のつぶ", "sp10.p":"グレーズをよく見てください。小さな黒いつぶは、ブルーベリーのかけらです。",
+      "sp11.t":"したたり方はそれぞれ", "sp11.p":"手でグレーズをかけるので、同じしたたり方のドーナツはひとつもありません。",
+      "sp12.t":"側面にもブルーベリー", "sp12.p":"ドーナツの側面をのぞいてみてください。ここにもブルーベリーが見えます。"
+    },
+    zh: {
+      "nav.back":"← 全部甜甜圈", "dir":"查看路线", "dock.all":"全部甜甜圈",
+      "hero.script":"甜蜜的蓝莓之约", "hero.h1":"蓝莓", "hero.tag":"季节限定 · 釜山限定",
+      "hero.lede":"一个甜甜圈,四个步骤,一个清晨。从一碗蓝莓到一层亮晶晶的紫色糖霜,看看我们的蓝莓甜甜圈是怎么做出来的。",
+      "hero.hint":"点击照片上的数字,看看细节。",
+      "nav.s1":"蓝莓", "nav.s2":"果酱", "nav.s3":"面团", "nav.s4":"糖霜", "step":"STEP",
+      "s1.script":"从水果开始", "s1.h":"满满一碗真蓝莓",
+      "s1.p":"早在下锅油炸之前,我们的蓝莓甜甜圈就从秤上的一碗完整蓝莓开始了。",
+      "s2.script":"慢慢熬", "s2.h":"熬成果酱",
+      "s2.p":"蓝莓和糖一起放进锅里,边加热边搅拌,直到果实化开,变成浓稠的深紫色果酱。",
+      "s3.script":"我们的日常面团", "s3.h":"炸好后,用手检查",
+      "s3.p":"蓝莓甜甜圈用的是和其他口味一样的面团,每天早上手工揉面、切型、油炸。",
+      "s4.script":"最后一步", "s4.h":"亮晶晶的蓝莓糖霜",
+      "s4.p":"最后,给每个甜甜圈裹上蓝莓糖霜,放在托盘上等它凝固。",
+      "film.h":"我们厨房的早晨",
+      "film.p":"16秒的日常甜甜圈制作:面团、油锅、糖霜。虽然不是蓝莓这一批,但是同一双手、同一种面团。",
+      "fin.script":"广安里见", "fin.h":"清晨现做,<br>傍晚售罄。",
+      "fin.p":"蓝莓是只有在我们广安里店才能吃到的季节限定口味。和所有产品一样只卖今天,请早点来。",
+      "fin.lineup":"查看全部口味",
+      "pop.prev":"← 上一个", "pop.next":"下一个 →", "pop.first":"回到第1个 →", "pop.close":"关闭",
+      "sp1.t":"完整的蓝莓", "sp1.p":"每一批都从完整的蓝莓开始。仔细看,能看到每颗果实的果皮和顶部的小皇冠。",
+      "sp2.t":"每次都称重", "sp2.p":"每一批下锅前都会先称重,所以每天早上的果酱都是同样的味道。",
+      "sp3.t":"蓝莓遇上糖", "sp3.p":"糖直接撒在蓝莓上,加热时慢慢融进果汁里。",
+      "sp4.t":"一直在搅拌", "sp4.p":"搅拌臂不停转动,果酱受热均匀,锅底也不会粘。",
+      "sp5.t":"果汁出来了", "sp5.p":"蓝莓受热后果皮破开、流出果汁,深紫色就从这里开始。",
+      "sp6.t":"浅色的一圈", "sp6.p":"看到中间那圈浅色了吗?发酵充分的甜甜圈会浮在油面上,这一圈碰不到热油。这是面团发酵到位的标志。",
+      "sp7.t":"一盘一盘来", "sp7.p":"刚出锅的甜甜圈,由戴着手套的手摆上托盘。",
+      "sp8.t":"让它透透气", "sp8.p":"放在带孔的托盘上冷却,蒸汽从底下散出去,底部就不会变湿软。",
+      "sp9.t":"一个一个来", "sp9.p":"裹糖霜之前,每个甜甜圈都会被拿起来用手检查。",
+      "sp10.t":"真正的果肉颗粒", "sp10.p":"仔细看糖霜,那些深色的小颗粒是蓝莓碎。",
+      "sp11.t":"每一滴都不一样", "sp11.p":"手工裹糖霜,所以没有两个甜甜圈滴落得一模一样。",
+      "sp12.t":"侧面也有蓝莓", "sp12.p":"看看甜甜圈的侧面,那里也能看到蓝莓。"
+    },
+    vi: {
+      "nav.back":"← Tất cả bánh", "dir":"Xem chỉ đường", "dock.all":"Tất cả bánh",
+      "hero.script":"Chuyện ngọt ngào về việt quất", "hero.h1":"Việt quất", "hero.tag":"Món theo mùa · Chỉ có ở Busan",
+      "hero.lede":"Một chiếc donut, bốn bước, một buổi sáng. Cùng xem chiếc donut việt quất ra đời thế nào, từ một tô quả mọng đến lớp phủ tím bóng.",
+      "hero.hint":"Chạm vào các số trên ảnh để xem kỹ hơn.",
+      "nav.s1":"Việt quất", "nav.s2":"Mứt", "nav.s3":"Bột", "nav.s4":"Lớp phủ", "step":"BƯỚC",
+      "s1.script":"Bắt đầu từ trái cây", "s1.h":"Việt quất thật, đầy cả tô",
+      "s1.p":"Chiếc donut việt quất bắt đầu từ rất lâu trước khi vào chảo dầu: một tô việt quất nguyên quả đặt trên cân.",
+      "s2.script":"Chậm rãi, đều tay", "s2.h":"Nấu thành mứt",
+      "s2.p":"Việt quất và đường được cho vào nồi cùng lúc, vừa đun vừa khuấy cho đến khi quả nhừ ra thành mứt tím đậm, sánh đặc.",
+      "s3.script":"Bột quen thuộc của chúng tôi", "s3.h":"Chiên xong, kiểm tra bằng tay",
+      "s3.p":"Donut việt quất dùng cùng loại bột với các vị khác, được nhào, cắt và chiên bằng tay mỗi sáng.",
+      "s4.script":"Bước hoàn thiện", "s4.h":"Lớp phủ việt quất bóng mượt",
+      "s4.p":"Bước cuối: từng chiếc donut được phủ lớp việt quất rồi để trên khay cho lớp phủ se lại.",
+      "film.h":"Một buổi sáng trong bếp",
+      "film.p":"16 giây làm donut hằng ngày: bột, chảo dầu, lớp phủ. Không phải mẻ việt quất, nhưng vẫn là những đôi tay ấy và loại bột ấy.",
+      "fin.script":"Hẹn gặp ở Gwangalli", "fin.h":"Làm sáng nay.<br>Hết trước chiều tối.",
+      "fin.p":"Việt quất là hương vị theo mùa chỉ có tại tiệm Gwangalli của chúng tôi. Như mọi món khác, chỉ bán trong hôm nay, nên hãy đến sớm.",
+      "fin.lineup":"Xem tất cả các vị",
+      "pop.prev":"← Trước", "pop.next":"Tiếp →", "pop.first":"Về số 1 →", "pop.close":"Đóng",
+      "sp1.t":"Việt quất nguyên quả", "sp1.p":"Mỗi mẻ đều bắt đầu từ quả nguyên. Nhìn kỹ sẽ thấy vỏ và chiếc vương miện nhỏ trên đầu mỗi quả.",
+      "sp2.t":"Lần nào cũng cân", "sp2.p":"Mỗi mẻ đều được cân trước khi cho vào nồi, nên sáng nào mứt cũng ra cùng một vị.",
+      "sp3.t":"Quả gặp đường", "sp3.p":"Đường được rắc thẳng lên quả. Khi nóng lên, đường tan vào nước quả.",
+      "sp4.t":"Khuấy liên tục", "sp4.p":"Cánh khuấy chạy liên tục để mứt chín đều và không bị cháy dưới đáy.",
+      "sp5.t":"Nước quả tiết ra", "sp5.p":"Khi nóng lên, vỏ quả nứt ra và tiết nước. Màu tím đậm bắt đầu từ đây.",
+      "sp6.t":"Vòng sáng màu", "sp6.p":"Thấy dải sáng màu ở giữa không? Chiếc donut nở tốt sẽ nổi trên dầu nên phần này không chạm nhiệt. Đó là dấu hiệu bột đã được ủ đủ thời gian.",
+      "sp7.t":"Từng khay một", "sp7.p":"Vừa ra khỏi chảo, donut được xếp lên khay bằng tay có đeo găng.",
+      "sp8.t":"Để bánh thở", "sp8.p":"Bánh nguội trên khay có lỗ để hơi nước thoát xuống dưới, đáy bánh không bị ỉu.",
+      "sp9.t":"Từng chiếc một", "sp9.p":"Mỗi chiếc được cầm lên kiểm tra bằng tay trước khi chuyển sang bước phủ.",
+      "sp10.t":"Mảnh trái cây thật", "sp10.p":"Nhìn kỹ lớp phủ: những chấm nhỏ sẫm màu là những mảnh việt quất.",
+      "sp11.t":"Mỗi giọt mỗi khác", "sp11.p":"Phủ bằng tay, nên không có hai chiếc donut nào chảy giọt giống hệt nhau.",
+      "sp12.t":"Bên hông cũng có việt quất", "sp12.p":"Nhìn vào hông bánh, bạn cũng sẽ thấy việt quất ở đó."
+    },
+    id: {
+      "nav.back":"← Semua donat", "dir":"Lihat Rute", "dock.all":"Semua donat",
+      "hero.script":"Kisah manis blueberry", "hero.h1":"Blueberry", "hero.tag":"Menu musiman · Hanya di Busan",
+      "hero.lede":"Satu donat, empat langkah, satu pagi. Begini donat blueberry kami dibuat, dari semangkuk buah beri sampai glaze ungu yang mengilap.",
+      "hero.hint":"Ketuk angka di setiap foto untuk melihat lebih dekat.",
+      "nav.s1":"Beri", "nav.s2":"Selai", "nav.s3":"Adonan", "nav.s4":"Glaze", "step":"LANGKAH",
+      "s1.script":"Berawal dari buah", "s1.h":"Blueberry asli, semangkuk penuh",
+      "s1.p":"Donat blueberry kami dimulai jauh sebelum penggorengan, dari semangkuk blueberry utuh di atas timbangan.",
+      "s2.script":"Pelan dan sabar", "s2.h":"Dimasak jadi selai",
+      "s2.p":"Blueberry dan gula masuk ke panci bersama dan diaduk sambil dipanaskan, sampai buahnya hancur menjadi selai ungu pekat yang kental.",
+      "s3.script":"Adonan harian kami", "s3.h":"Digoreng, lalu dicek dengan tangan",
+      "s3.p":"Donat blueberry memakai adonan yang sama dengan menu lainnya, diuleni, dicetak, dan digoreng dengan tangan setiap pagi.",
+      "s4.script":"Sentuhan terakhir", "s4.h":"Glaze blueberry yang mengilap",
+      "s4.p":"Langkah terakhir: setiap donat diberi glaze blueberry lalu dibiarkan mengeras di atas nampan.",
+      "film.h":"Pagi di dapur kami",
+      "film.p":"16 detik pembuatan donat sehari-hari: adonan, penggorengan, glaze. Bukan batch blueberry, tapi tangan yang sama dan adonan yang sama.",
+      "fin.script":"Sampai jumpa di Gwangalli", "fin.h":"Dibuat pagi ini.<br>Habis sebelum malam.",
+      "fin.p":"Blueberry adalah rasa musiman yang hanya ada di toko kami di Gwangalli. Seperti semua yang kami buat, hanya dijual hari ini, jadi datanglah lebih awal.",
+      "fin.lineup":"Lihat semua rasa",
+      "pop.prev":"← Sebelumnya", "pop.next":"Berikutnya →", "pop.first":"Kembali ke 1 →", "pop.close":"Tutup",
+      "sp1.t":"Blueberry utuh", "sp1.p":"Setiap batch dimulai dari buah utuh. Lihat lebih dekat, kulit dan mahkota kecil di atas tiap buah terlihat jelas.",
+      "sp2.t":"Selalu ditimbang", "sp2.p":"Setiap batch ditimbang sebelum masuk panci, jadi selainya selalu sama, pagi demi pagi.",
+      "sp3.t":"Buah bertemu gula", "sp3.p":"Gula langsung ditaburkan di atas buah. Saat menghangat, gula meleleh ke dalam sarinya.",
+      "sp4.t":"Terus diaduk", "sp4.p":"Lengan pengaduk terus bergerak supaya selai matang merata dan tidak gosong di dasar.",
+      "sp5.t":"Sarinya keluar", "sp5.p":"Saat dipanaskan, kulit buah pecah dan sarinya keluar. Dari sinilah warna ungu pekat itu berasal.",
+      "sp6.t":"Garis pucat", "sp6.p":"Lihat garis terang di bagian tengah? Donat yang mengembang baik akan mengapung di minyak, jadi bagian ini tidak terkena panas. Itu tanda adonan diberi waktu fermentasi yang cukup.",
+      "sp7.t":"Nampan demi nampan", "sp7.p":"Baru keluar dari penggorengan, donat ditata di nampan dengan tangan bersarung tangan.",
+      "sp8.t":"Biar bisa bernapas", "sp8.p":"Donat didinginkan di nampan berlubang, jadi uapnya keluar dari bawah dan bagian bawahnya tidak lembek.",
+      "sp9.t":"Satu per satu", "sp9.p":"Setiap donat diangkat dan dicek dengan tangan sebelum lanjut ke glaze.",
+      "sp10.t":"Serpihan buah asli", "sp10.p":"Perhatikan glaze-nya. Bintik gelap kecil itu adalah potongan blueberry.",
+      "sp11.t":"Setiap tetesan berbeda", "sp11.p":"Di-glaze dengan tangan, jadi tidak ada dua donat yang tetesannya sama persis.",
+      "sp12.t":"Ada blueberry di samping juga", "sp12.p":"Intip sisi donatnya. Di sana juga ada blueberry."
+    },
+    th: {
+      "nav.back":"← โดนัททั้งหมด", "dir":"ดูเส้นทาง", "dock.all":"โดนัททั้งหมด",
+      "hero.script":"เรื่องหวานๆ ของบลูเบอร์รี่", "hero.h1":"บลูเบอร์รี่", "hero.tag":"เมนูตามฤดูกาล · มีแค่ที่ปูซาน",
+      "hero.lede":"โดนัทหนึ่งชิ้น สี่ขั้นตอน หนึ่งเช้า มาดูกันว่าโดนัทบลูเบอร์รี่ของเราทำอย่างไร ตั้งแต่บลูเบอร์รี่หนึ่งชาม จนถึงเกลซสีม่วงเงางาม",
+      "hero.hint":"แตะตัวเลขบนรูปเพื่อดูใกล้ๆ",
+      "nav.s1":"เบอร์รี่", "nav.s2":"แยม", "nav.s3":"แป้ง", "nav.s4":"เกลซ", "step":"ขั้นที่",
+      "s1.script":"เริ่มจากผลไม้", "s1.h":"บลูเบอร์รี่จริง เต็มชาม",
+      "s1.p":"โดนัทบลูเบอร์รี่ของเราเริ่มต้นตั้งแต่ก่อนลงหม้อทอด ด้วยบลูเบอร์รี่ทั้งลูกหนึ่งชามบนตาชั่ง",
+      "s2.script":"ค่อยๆ เคี่ยว", "s2.h":"เคี่ยวจนเป็นแยม",
+      "s2.p":"ใส่บลูเบอร์รี่กับน้ำตาลลงหม้อพร้อมกัน คนไปพร้อมกับให้ความร้อน จนผลไม้แตกตัวเป็นแยมสีม่วงเข้มเนื้อข้น",
+      "s3.script":"แป้งประจำวันของเรา", "s3.h":"ทอดแล้ว ตรวจด้วยมือ",
+      "s3.p":"โดนัทบลูเบอร์รี่ใช้แป้งเดียวกับรสอื่นๆ ทั้งหมด นวด ตัด และทอดด้วยมือทุกเช้า",
+      "s4.script":"ขั้นตอนสุดท้าย", "s4.h":"เกลซบลูเบอร์รี่เงางาม",
+      "s4.p":"ขั้นสุดท้าย: โดนัทแต่ละชิ้นจะเคลือบเกลซบลูเบอร์รี่ แล้ววางพักไว้บนถาดให้เซ็ตตัว",
+      "film.h":"เช้าวันหนึ่งในครัวของเรา",
+      "film.p":"16 วินาทีของการทำโดนัทในทุกวัน: แป้ง หม้อทอด เกลซ ไม่ใช่ล็อตบลูเบอร์รี่ แต่เป็นมือคู่เดิมและแป้งสูตรเดิม",
+      "fin.script":"แล้วพบกันที่กวางอันรี", "fin.h":"ทำเช้านี้<br>หมดก่อนเย็น",
+      "fin.p":"บลูเบอร์รี่เป็นรสตามฤดูกาลที่มีแค่ร้านกวางอันรีของเรา และเหมือนทุกอย่างที่เราทำ ขายแค่วันนี้ มาเร็วหน่อยนะ",
+      "fin.lineup":"ดูรสทั้งหมด",
+      "pop.prev":"← ก่อนหน้า", "pop.next":"ถัดไป →", "pop.first":"กลับไปข้อ 1 →", "pop.close":"ปิด",
+      "sp1.t":"บลูเบอร์รี่ทั้งลูก", "sp1.p":"ทุกล็อตเริ่มจากผลทั้งลูก มองใกล้ๆ จะเห็นเปลือกและมงกุฎเล็กๆ บนหัวของแต่ละลูก",
+      "sp2.t":"ชั่งทุกครั้ง", "sp2.p":"ทุกล็อตจะชั่งก่อนลงหม้อ แยมจึงออกมารสชาติเดิมทุกเช้า",
+      "sp3.t":"เบอร์รี่เจอน้ำตาล", "sp3.p":"โรยน้ำตาลลงบนเบอร์รี่โดยตรง พอร้อนขึ้นน้ำตาลจะละลายเข้าไปในน้ำผลไม้",
+      "sp4.t":"คนตลอดเวลา", "sp4.p":"แขนกวนหมุนไม่หยุด แยมจึงสุกทั่วกันและไม่ไหม้ติดก้นหม้อ",
+      "sp5.t":"น้ำผลไม้ไหลออกมา", "sp5.p":"เมื่อโดนความร้อน เปลือกจะแตกและน้ำผลไม้ไหลออกมา สีม่วงเข้มเริ่มต้นจากตรงนี้",
+      "sp6.t":"เส้นสีอ่อน", "sp6.p":"เห็นแถบสีอ่อนตรงกลางไหม? โดนัทที่ขึ้นฟูดีจะลอยบนน้ำมัน ส่วนนี้จึงไม่โดนความร้อน เป็นสัญญาณว่าแป้งได้พักขึ้นฟูนานพอ",
+      "sp7.t":"ทีละถาด", "sp7.p":"โดนัทที่เพิ่งทอดเสร็จถูกเรียงลงถาดด้วยมือที่สวมถุงมือ",
+      "sp8.t":"ให้ได้หายใจ", "sp8.p":"พักให้เย็นบนถาดที่มีรู ไอน้ำจึงระบายออกด้านล่าง ก้นโดนัทไม่แฉะ",
+      "sp9.t":"ทีละชิ้น", "sp9.p":"โดนัทแต่ละชิ้นจะถูกหยิบขึ้นมาตรวจด้วยมือก่อนไปเคลือบเกลซ",
+      "sp10.t":"เนื้อผลไม้จริง", "sp10.p":"ลองดูเกลซใกล้ๆ จุดเล็กๆ สีเข้มคือชิ้นบลูเบอร์รี่",
+      "sp11.t":"หยดไม่ซ้ำกัน", "sp11.p":"เคลือบด้วยมือ จึงไม่มีโดนัทสองชิ้นที่หยดเหมือนกันเลย",
+      "sp12.t":"ด้านข้างก็มีบลูเบอร์รี่", "sp12.p":"ลองดูด้านข้างของโดนัท จะเห็นบลูเบอร์รี่ตรงนั้นด้วย"
+    }
+  };
+
+  var lang = 'en';
+  function t(k){ var d = I18N[lang]; return d[k] !== undefined ? d[k] : I18N.en[k]; }
+
   var spots = Array.prototype.slice.call(document.querySelectorAll('.spot'));
   var pop = document.getElementById('pop');
-  var zoom = document.getElementById('popZoom');
   var cur = 0;
 
-  spots.forEach(function(s, i){
-    s.setAttribute('aria-label', (i + 1) + '. ' + s.dataset.title);
-    s.addEventListener('click', function(){ show(i); });
-  });
+  function labelSpots(){
+    spots.forEach(function(s, i){ s.setAttribute('aria-label', (i + 1) + '. ' + t('sp' + (i + 1) + '.t')); });
+  }
 
-  function show(i){
-    cur = (i + spots.length) % spots.length;
-    var s = spots[cur];
+  function applyLang(l){
+    lang = I18N[l] ? l : 'en';
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var v = t(el.getAttribute('data-i18n'));
+      if(v !== undefined) el.innerHTML = v;
+    });
+    document.documentElement.lang = lang;
+    document.getElementById('popClose').setAttribute('aria-label', t('pop.close'));
+    labelSpots();
+    if(pop.open){ render(); }
+    try{ localStorage.setItem('bbd-lang', lang); }catch(e){}
+  }
+
+  function render(){
+    var s = spots[cur], n = cur + 1, st = s.getAttribute('data-s');
     var img = s.parentElement.querySelector('img');
     var x = s.style.getPropertyValue('--x'), y = s.style.getPropertyValue('--y');
     var pimg = document.getElementById('popImg');
-    pimg.src = img.getAttribute('src');
+    if(pimg.getAttribute('src') !== img.getAttribute('src')){ pimg.src = img.getAttribute('src'); }
     pimg.alt = img.getAttribute('alt');
     var frame = document.getElementById('popFrame');
     frame.style.setProperty('--px', x);
     frame.style.setProperty('--py', y);
-    document.getElementById('popStep').textContent = s.dataset.step;
-    document.getElementById('popTitle').textContent = s.dataset.title;
-    document.getElementById('popText').textContent = s.dataset.text;
-    document.getElementById('popCount').textContent = (cur + 1) + ' / ' + spots.length;
-    document.getElementById('popNext').textContent = cur === spots.length - 1 ? 'Back to 1 →' : 'Next →';
-    s.classList.add('seen');
+    document.getElementById('popStep').textContent = t('step') + ' 0' + st + ' · ' + t('nav.s' + st);
+    document.getElementById('popTitle').textContent = t('sp' + n + '.t');
+    document.getElementById('popText').textContent = t('sp' + n + '.p');
+    document.getElementById('popCount').textContent = n + ' / ' + spots.length;
+    document.getElementById('popPrev').textContent = t('pop.prev');
+    document.getElementById('popNext').textContent = n === spots.length ? t('pop.first') : t('pop.next');
+  }
+
+  function show(i){
+    cur = (i + spots.length) % spots.length;
+    spots[cur].classList.add('seen');
+    render();
     if(!pop.open){ pop.showModal(); }
-    if(typeof gtag === 'function'){ gtag('event', 'blueberry_spot', { spot: cur + 1 }); }
+    if(typeof gtag === 'function'){ gtag('event', 'blueberry_spot', { spot: cur + 1, lang: lang }); }
   }
 
   function close(){
@@ -371,6 +615,7 @@
     s.focus({ preventScroll:true });
   }
 
+  spots.forEach(function(s, i){ s.addEventListener('click', function(){ show(i); }); });
   document.getElementById('popClose').addEventListener('click', close);
   document.getElementById('popPrev').addEventListener('click', function(){ show(cur - 1); });
   document.getElementById('popNext').addEventListener('click', function(){ show(cur + 1); });
@@ -381,6 +626,15 @@
     if(e.key === 'ArrowLeft'){ show(cur - 1); }
   });
 
+  /* language: shared with the main page via the same storage key */
+  var sel = document.getElementById('langSelect');
+  var saved = 'en';
+  try{ saved = localStorage.getItem('bbd-lang') || 'en'; }catch(e){}
+  if(!I18N[saved]){ saved = 'en'; }
+  sel.value = saved;
+  applyLang(saved);
+  sel.addEventListener('change', function(){ applyLang(this.value); });
+
   /* highlight the current step in the nav */
   var links = Array.prototype.slice.call(document.querySelectorAll('.steps-nav a'));
   if('IntersectionObserver' in window){
@@ -390,7 +644,7 @@
           links.forEach(function(a){
             var on = a.getAttribute('href') === '#' + en.target.id;
             a.setAttribute('aria-current', on ? 'true' : 'false');
-            if(on && a.scrollIntoView){ a.parentElement.scrollTo({ left: a.offsetLeft - 20, behavior:'smooth' }); }
+            if(on){ a.parentElement.scrollTo({ left: a.offsetLeft - 20, behavior:'smooth' }); }
           });
         }
       });
